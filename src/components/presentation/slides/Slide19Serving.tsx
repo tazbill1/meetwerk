@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
-import { Heart, Users, MapPin, Calendar } from 'lucide-react';
+import { Heart } from 'lucide-react';
+import serveyouScreenshot from '@/assets/serveyou-screenshot.png';
 
 export const Slide19Serving = () => {
   return (
@@ -9,7 +10,7 @@ export const Slide19Serving = () => {
       
       <div className="relative z-10 w-full max-w-6xl px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left side - Phone mockups */}
+          {/* Left side - Screenshot */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -22,81 +23,14 @@ export const Slide19Serving = () => {
               <span className="text-werk-navy">serve</span><span className="text-werk-lime">you</span>
             </div>
             
-            <div className="flex justify-center gap-4">
-              {/* Events List Phone */}
-              <div className="relative w-40 md:w-48">
-                <div className="bg-gradient-to-br from-werk-navy to-werk-dark rounded-[2.5rem] p-1.5 shadow-2xl">
-                  <div className="bg-white rounded-[2rem] p-3 aspect-[9/16] flex flex-col">
-                    <div className="bg-werk-navy text-white text-xs py-2 px-3 rounded-t-lg text-center font-medium">
-                      serveyou
-                    </div>
-                    
-                    {/* Event Card 1 */}
-                    <div className="mt-3 bg-gray-100 rounded-lg overflow-hidden">
-                      <div className="h-16 bg-gradient-to-r from-werk-cyan/30 to-werk-blue/30 flex items-center justify-center">
-                        <Users className="w-6 h-6 text-werk-navy" />
-                      </div>
-                      <div className="p-2">
-                        <div className="text-[8px] font-semibold text-werk-navy">Feed the community together!</div>
-                        <div className="text-[6px] text-gray-500">Feb 28 2021, 07:00pm</div>
-                        <div className="flex gap-1 mt-1">
-                          <span className="text-[6px] bg-werk-lime text-werk-dark px-1.5 py-0.5 rounded">I'm in</span>
-                          <span className="text-[6px] bg-gray-200 text-gray-600 px-1.5 py-0.5 rounded">+1</span>
-                          <span className="text-[6px] bg-gray-200 text-gray-600 px-1.5 py-0.5 rounded">I'm out</span>
-                          <span className="text-[6px] text-werk-cyan font-bold ml-auto">45/50</span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Event Card 2 */}
-                    <div className="mt-2 bg-gray-100 rounded-lg overflow-hidden">
-                      <div className="h-12 bg-gradient-to-r from-werk-lime/30 to-werk-cyan/30 flex items-center justify-center">
-                        <MapPin className="w-5 h-5 text-werk-navy" />
-                      </div>
-                      <div className="p-2">
-                        <div className="text-[8px] font-semibold text-werk-navy">5K - Virtual Event</div>
-                        <div className="text-[6px] text-gray-500">Virtual | Sep 18, 06:30pm</div>
-                        <div className="flex gap-1 mt-1">
-                          <span className="text-[6px] bg-werk-lime text-werk-dark px-1.5 py-0.5 rounded">I'm in</span>
-                          <span className="text-[6px] bg-gray-200 text-gray-600 px-1.5 py-0.5 rounded">+1</span>
-                          <span className="text-[6px] bg-gray-200 text-gray-600 px-1.5 py-0.5 rounded">I'm out</span>
-                          <span className="text-[6px] text-werk-cyan font-bold ml-auto">123/156</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Event Detail Phone */}
-              <div className="relative w-40 md:w-48 mt-8">
-                <div className="bg-gradient-to-br from-werk-cyan to-werk-blue rounded-[2.5rem] p-1.5 shadow-2xl">
-                  <div className="bg-white rounded-[2rem] p-3 aspect-[9/16] flex flex-col">
-                    <div className="bg-werk-cyan text-white text-xs py-2 px-3 rounded-t-lg text-center font-medium">
-                      Event Details
-                    </div>
-                    <div className="mt-2 text-[9px] font-semibold text-werk-navy">Feed the community together!</div>
-                    <div className="flex gap-1 mt-2">
-                      <span className="text-[6px] bg-werk-lime text-werk-dark px-1.5 py-0.5 rounded">I'm in</span>
-                      <span className="text-[6px] bg-gray-200 text-gray-600 px-1.5 py-0.5 rounded">+1</span>
-                      <span className="text-[6px] bg-gray-200 text-gray-600 px-1.5 py-0.5 rounded">I'm out</span>
-                      <span className="text-[6px] text-werk-cyan font-bold ml-auto">45/50</span>
-                    </div>
-                    <div className="mt-2 flex items-center gap-1.5">
-                      <Calendar className="w-3 h-3 text-werk-navy" />
-                      <div>
-                        <div className="text-[7px] font-medium text-werk-navy">Date & Time</div>
-                        <div className="text-[6px] text-gray-500">Feb 28, 2021 • 7:00pm</div>
-                      </div>
-                    </div>
-                    <div className="mt-2 text-[7px] font-medium text-werk-navy">Description</div>
-                    <div className="text-[6px] text-gray-500 leading-tight">Our community is in need of food now more than ever, we're serving together and making a difference.</div>
-                    <div className="mt-2 text-[7px] font-medium text-werk-navy">Address</div>
-                    <div className="mt-1 bg-gray-100 rounded h-12 flex items-center justify-center">
-                      <MapPin className="w-4 h-4 text-werk-cyan" />
-                    </div>
-                  </div>
-                </div>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-werk-lime/20 via-werk-cyan/20 to-werk-blue/20 rounded-3xl blur-xl" />
+              <div className="relative bg-black/5 backdrop-blur-sm rounded-2xl p-3 border border-black/10 shadow-2xl">
+                <img 
+                  src={serveyouScreenshot} 
+                  alt="ServeYou community events app" 
+                  className="rounded-xl w-full max-w-md h-auto"
+                />
               </div>
             </div>
           </motion.div>
