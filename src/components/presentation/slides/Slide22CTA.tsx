@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
 import werkLogo from '@/assets/werkandme-logo.png';
 
-export const Slide21CTA = () => {
+export const Slide22CTA = () => {
   return (
     <div className="relative w-full h-full gradient-werk-dark flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 opacity-20">

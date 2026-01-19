@@ -3,7 +3,7 @@ import { SlideHeader } from '../SlideHeader';
 import { Gift } from 'lucide-react';
 import gomeRewardsScreenshot from '@/assets/gome-rewards-screenshot.png';
 
-export const Slide20Rewards = () => {
+export const Slide21Rewards = () => {
 
   return (
     <div className="relative w-full h-full gradient-werk-dark flex items-center justify-center overflow-hidden">

@@ -23,9 +23,10 @@ const slideComponents = [
   Slides.Slide16Dashboard,
   Slides.Slide17Gamification,
   Slides.Slide18Recognition,
-  Slides.Slide19Training,
-  Slides.Slide20Rewards,
-  Slides.Slide21CTA,
+  Slides.Slide19Serving,
+  Slides.Slide20Training,
+  Slides.Slide21Rewards,
+  Slides.Slide22CTA,
 ];
 
 export const Presentation = () => {
