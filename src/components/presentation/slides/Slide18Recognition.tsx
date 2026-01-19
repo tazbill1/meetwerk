@@ -51,8 +51,12 @@ export const Slide18Recognition = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex justify-center gap-4"
+            className="flex flex-col items-center"
           >
+            <div className="mb-4 text-xl font-semibold">
+              <span className="text-werk-navy">Notice</span><span className="text-werk-lime">Me</span>
+            </div>
+            <div className="flex justify-center gap-4">
             {/* Phone mockups with screenshots */}
             <div className="relative w-44 md:w-52">
               <div className="bg-black rounded-[2.5rem] p-1.5 shadow-2xl">
@@ -71,6 +75,7 @@ export const Slide18Recognition = () => {
                   className="rounded-[2rem] w-full h-auto"
                 />
               </div>
+            </div>
             </div>
           </motion.div>
         </div>
