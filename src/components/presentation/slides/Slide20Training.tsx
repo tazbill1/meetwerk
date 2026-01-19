@@ -3,7 +3,7 @@ import { SlideHeader } from '../SlideHeader';
 import { GraduationCap, Calendar, BookOpen, Users, Lightbulb } from 'lucide-react';
 import growmeScreenshot from '@/assets/growme-training-screenshot.png';
 
-export const Slide19Training = () => {
+export const Slide20Training = () => {
   const features = [
     { icon: Calendar, label: 'Scheduled Training', desc: 'Calendar-based event tracking' },
     { icon: BookOpen, label: 'On-Demand Courses', desc: 'Self-paced learning library' },
