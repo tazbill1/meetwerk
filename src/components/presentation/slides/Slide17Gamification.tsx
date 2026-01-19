@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
-import { Trophy, Target, Flame, Star } from 'lucide-react';
+import { Trophy } from 'lucide-react';
+import contestScreenshot from '@/assets/contest-leaderboard-screenshot.jpg';
 
 export const Slide17Gamification = () => {
   const challenges = [
@@ -68,49 +69,16 @@ export const Slide17Gamification = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="relative"
+            className="flex justify-center"
           >
-            {/* Leaderboard mockup */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-6 border border-white/10">
-              <div className="flex items-center gap-2 mb-6">
-                <Flame className="w-5 h-5 text-werk-lime" />
-                <h3 className="font-semibold text-white">This Week's Leaderboard</h3>
-              </div>
-              
-              <div className="space-y-3">
-                {[
-                  { rank: 1, name: 'Sarah M.', points: 2450, avatar: '👩' },
-                  { rank: 2, name: 'Mike R.', points: 2180, avatar: '👨' },
-                  { rank: 3, name: 'David K.', points: 1920, avatar: '👨‍🦱' },
-                  { rank: 4, name: 'Lisa T.', points: 1750, avatar: '👩‍🦰' },
-                  { rank: 5, name: 'James W.', points: 1620, avatar: '🧑' },
-                ].map((player, index) => (
-                  <motion.div
-                    key={player.name}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.4 + index * 0.08 }}
-                    className={`flex items-center gap-4 rounded-xl px-4 py-3 ${
-                      index === 0 
-                        ? 'bg-gradient-to-r from-werk-lime/20 to-werk-cyan/20 border border-werk-lime/30' 
-                        : 'bg-white/5'
-                    }`}
-                  >
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
-                      index === 0 ? 'bg-werk-lime text-werk-dark' : 
-                      index === 1 ? 'bg-werk-cyan text-white' :
-                      index === 2 ? 'bg-werk-blue text-white' : 'bg-white/10 text-white'
-                    }`}>
-                      {player.rank}
-                    </div>
-                    <span className="text-2xl">{player.avatar}</span>
-                    <span className="text-white font-medium flex-1">{player.name}</span>
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 text-werk-lime" />
-                      <span className="text-white font-bold">{player.points}</span>
-                    </div>
-                  </motion.div>
-                ))}
+            {/* Phone mockup with screenshot */}
+            <div className="relative mx-auto w-64 md:w-72">
+              <div className="bg-black rounded-[3rem] p-2 shadow-2xl">
+                <img 
+                  src={contestScreenshot} 
+                  alt="Customer Car Photo Contest leaderboard" 
+                  className="rounded-[2.5rem] w-full h-auto"
+                />
               </div>
             </div>
           </motion.div>
