@@ -1,0 +1,65 @@
+import { useSlideNavigation } from '@/hooks/useSlideNavigation';
+import { SlideContainer } from './SlideContainer';
+import { ProgressBar } from './ProgressBar';
+import { NavigationControls } from './NavigationControls';
+import * as Slides from './slides';
+
+const slideComponents = [
+  Slides.Slide01Hero,
+  Slides.Slide02ApathyProblem,
+  Slides.Slide03TurnoverProblem,
+  Slides.Slide04ViciousCycle,
+  Slides.Slide05NotTrustFalls,
+  Slides.Slide06WorkforceChanged,
+  Slides.Slide07WhyInvest,
+  Slides.Slide08WhatTheyWant,
+  Slides.Slide09EngagedEqualsPerformance,
+  Slides.Slide10OnePlatform,
+  Slides.Slide11WhatMakesDifferent,
+  Slides.Slide12ProvenResults,
+  Slides.Slide13Implementation,
+  Slides.Slide14Pricing,
+  Slides.Slide15EmotionalCheckins,
+  Slides.Slide16Dashboard,
+  Slides.Slide17Gamification,
+  Slides.Slide18Recognition,
+  Slides.Slide19Rewards,
+  Slides.Slide20CTA,
+];
+
+export const Presentation = () => {
+  const {
+    currentSlide,
+    direction,
+    nextSlide,
+    prevSlide,
+    isFirstSlide,
+    isLastSlide,
+    progress,
+  } = useSlideNavigation({ totalSlides: slideComponents.length });
+
+  const CurrentSlideComponent = slideComponents[currentSlide];
+
+  return (
+    <div className="relative w-full h-screen overflow-hidden bg-background">
+      <ProgressBar 
+        progress={progress} 
+        currentSlide={currentSlide} 
+        totalSlides={slideComponents.length} 
+      />
+      
+      <div className="relative w-full h-full">
+        <SlideContainer slideKey={currentSlide} direction={direction}>
+          <CurrentSlideComponent />
+        </SlideContainer>
+      </div>
+      
+      <NavigationControls
+        onPrev={prevSlide}
+        onNext={nextSlide}
+        isFirstSlide={isFirstSlide}
+        isLastSlide={isLastSlide}
+      />
+    </div>
+  );
+};
