@@ -44,7 +44,7 @@ export const Slide14Pricing = () => {
         'Everything in Growth',
         'Multi-location dashboard',
         'API integrations',
-        'Dedicated success manager',
+        'Dealership Culture Coach',
         'Custom development',
         'SLA guarantee',
       ],

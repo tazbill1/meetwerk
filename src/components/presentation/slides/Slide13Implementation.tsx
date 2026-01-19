@@ -98,7 +98,7 @@ export const Slide13Implementation = () => {
           transition={{ delay: 0.9 }}
           className="mt-10 text-center text-muted-foreground"
         >
-          Includes dedicated customer success manager & 24/7 support
+          Includes Dealership Culture Coach & 24/7 support
         </motion.div>
       </div>
     </div>
