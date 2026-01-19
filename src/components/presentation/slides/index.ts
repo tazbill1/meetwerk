@@ -10,6 +10,7 @@ export { Slide09EngagedEqualsPerformance } from './Slide09EngagedEqualsPerforman
 export { Slide10OnePlatform } from './Slide10OnePlatform';
 export { Slide11WhatMakesDifferent } from './Slide11WhatMakesDifferent';
 export { Slide12ProvenResults } from './Slide12ProvenResults';
+export { SlideCalculator } from './SlideCalculator';
 export { Slide13Implementation } from './Slide13Implementation';
 
 export { Slide15EmotionalCheckins } from './Slide15EmotionalCheckins';

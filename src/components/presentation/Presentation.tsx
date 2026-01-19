@@ -17,6 +17,7 @@ const slideComponents = [
   Slides.Slide10OnePlatform,
   Slides.Slide11WhatMakesDifferent,
   Slides.Slide12ProvenResults,
+  Slides.SlideCalculator,
   Slides.Slide13Implementation,
   
   Slides.Slide15EmotionalCheckins,
