@@ -16,5 +16,6 @@ export { Slide15EmotionalCheckins } from './Slide15EmotionalCheckins';
 export { Slide16Dashboard } from './Slide16Dashboard';
 export { Slide17Gamification } from './Slide17Gamification';
 export { Slide18Recognition } from './Slide18Recognition';
-export { Slide19Rewards } from './Slide19Rewards';
-export { Slide20CTA } from './Slide20CTA';
+export { Slide19Training } from './Slide19Training';
+export { Slide20Rewards } from './Slide20Rewards';
+export { Slide21CTA } from './Slide21CTA';
