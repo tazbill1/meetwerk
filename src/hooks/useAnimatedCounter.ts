@@ -20,14 +20,16 @@ export const useAnimatedCounter = ({
   decimals = 0,
 }: UseAnimatedCounterProps) => {
   const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const hasAnimatedRef = useRef(false);
   const frameRef = useRef<number>();
+  const timeoutRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
-    if (!isVisible || hasAnimated) return;
+    if (!isVisible || hasAnimatedRef.current) return;
 
-    const timeout = setTimeout(() => {
-      setHasAnimated(true);
+    hasAnimatedRef.current = true;
+    
+    timeoutRef.current = setTimeout(() => {
       const startTime = performance.now();
       
       const animate = (currentTime: number) => {
@@ -49,12 +51,14 @@ export const useAnimatedCounter = ({
     }, delay);
 
     return () => {
-      clearTimeout(timeout);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
       if (frameRef.current) {
         cancelAnimationFrame(frameRef.current);
       }
     };
-  }, [end, duration, delay, isVisible, hasAnimated, decimals]);
+  }, [end, duration, delay, isVisible, decimals]);
 
   const formattedValue = `${prefix}${count.toLocaleString(undefined, {
     minimumFractionDigits: decimals,
