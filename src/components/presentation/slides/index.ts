@@ -11,7 +11,7 @@ export { Slide10OnePlatform } from './Slide10OnePlatform';
 export { Slide11WhatMakesDifferent } from './Slide11WhatMakesDifferent';
 export { Slide12ProvenResults } from './Slide12ProvenResults';
 export { Slide13Implementation } from './Slide13Implementation';
-export { Slide14Pricing } from './Slide14Pricing';
+
 export { Slide15EmotionalCheckins } from './Slide15EmotionalCheckins';
 export { Slide16Dashboard } from './Slide16Dashboard';
 export { Slide17Gamification } from './Slide17Gamification';
