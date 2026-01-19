@@ -57,6 +57,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // WerkandMe Brand Colors
+        werk: {
+          lime: "hsl(var(--werk-lime))",
+          cyan: "hsl(var(--werk-cyan))",
+          blue: "hsl(var(--werk-blue))",
+          navy: "hsl(var(--werk-navy))",
+          dark: "hsl(var(--werk-dark))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
