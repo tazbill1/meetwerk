@@ -95,7 +95,7 @@ export const Slide05NotTrustFalls = () => {
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-white mt-2" />
-                <span>Actionable manager dashboards with clear next steps</span>
+                <span>Actionable Data supported by Culture Coach</span>
               </li>
             </ul>
           </motion.div>
