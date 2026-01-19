@@ -1,13 +1,9 @@
 import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
-import { Heart, Smile, Meh, Frown } from 'lucide-react';
+import { Heart } from 'lucide-react';
+import checkmeScreenshot from '@/assets/checkme-app-screenshot.jpg';
 
 export const Slide15EmotionalCheckins = () => {
-  const emotions = [
-    { icon: Smile, label: 'Great', color: 'bg-werk-lime', percentage: 45 },
-    { icon: Meh, label: 'Okay', color: 'bg-werk-cyan', percentage: 30 },
-    { icon: Frown, label: 'Struggling', color: 'bg-werk-blue', percentage: 25 },
-  ];
 
   return (
     <div className="relative w-full h-full gradient-werk-dark flex items-center justify-center overflow-hidden">
@@ -72,38 +68,16 @@ export const Slide15EmotionalCheckins = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
+            className="flex justify-center"
           >
-            {/* Mock phone UI */}
+            {/* Phone mockup with screenshot */}
             <div className="relative mx-auto w-64 md:w-72">
-              <div className="bg-white rounded-[3rem] p-3 shadow-2xl">
-                <div className="bg-gradient-to-b from-werk-navy to-werk-dark rounded-[2.5rem] p-6 min-h-[500px]">
-                  <div className="text-center text-white">
-                    <div className="text-sm opacity-60 mb-2">How are you feeling today?</div>
-                    <div className="text-xl font-semibold mb-8">Quick Check-in</div>
-                    
-                    <div className="space-y-4">
-                      {emotions.map((emotion, index) => (
-                        <motion.div
-                          key={emotion.label}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.4 + index * 0.1 }}
-                          className={`${emotion.color} rounded-2xl p-4 flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform`}
-                        >
-                          <emotion.icon className="w-8 h-8 text-white" />
-                          <div className="text-left flex-1">
-                            <div className="font-semibold text-white">{emotion.label}</div>
-                            <div className="text-xs text-white/70">{emotion.percentage}% of team</div>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                    
-                    <div className="mt-8 text-xs text-white/40">
-                      Your response is private
-                    </div>
-                  </div>
-                </div>
+              <div className="bg-black rounded-[3rem] p-2 shadow-2xl">
+                <img 
+                  src={checkmeScreenshot} 
+                  alt="CheckMe app check-in interface" 
+                  className="rounded-[2.5rem] w-full h-auto"
+                />
               </div>
             </div>
           </motion.div>
