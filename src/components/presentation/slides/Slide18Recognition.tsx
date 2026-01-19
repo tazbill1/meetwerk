@@ -1,31 +1,10 @@
 import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
-import { MessageSquare, Heart, ThumbsUp, Award } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
+import noticemeFeed from '@/assets/noticeme-feed-screenshot.jpg';
+import noticemeDetail from '@/assets/noticeme-detail-screenshot.jpg';
 
 export const Slide18Recognition = () => {
-  const recognitions = [
-    {
-      from: 'Mike R.',
-      to: 'Sarah M.',
-      message: 'Crushed it with that difficult customer today! Real pro.',
-      badge: '🌟 Customer Hero',
-      time: '2h ago',
-    },
-    {
-      from: 'Lisa T.',
-      to: 'David K.',
-      message: 'Thanks for staying late to help me finish the paperwork!',
-      badge: '🤝 Team Player',
-      time: '4h ago',
-    },
-    {
-      from: 'Manager',
-      to: 'James W.',
-      message: 'Hit 120% of quota this month. Incredible work!',
-      badge: '🏆 Top Performer',
-      time: '1d ago',
-    },
-  ];
 
   return (
     <div className="relative w-full h-full bg-background flex items-center justify-center overflow-hidden">
@@ -72,42 +51,27 @@ export const Slide18Recognition = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="space-y-4"
+            className="flex justify-center gap-4"
           >
-            {recognitions.map((rec, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + index * 0.1 }}
-                className="bg-card rounded-2xl p-5 border shadow-sm"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <span className="font-semibold text-foreground">{rec.from}</span>
-                    <span className="text-muted-foreground">→</span>
-                    <span className="font-semibold text-werk-blue">{rec.to}</span>
-                  </div>
-                  <span className="text-xs text-muted-foreground">{rec.time}</span>
-                </div>
-                <p className="text-muted-foreground mb-3">{rec.message}</p>
-                <div className="flex items-center justify-between">
-                  <span className="inline-block px-3 py-1 bg-accent rounded-full text-sm font-medium text-accent-foreground">
-                    {rec.badge}
-                  </span>
-                  <div className="flex items-center gap-3">
-                    <button className="flex items-center gap-1 text-muted-foreground hover:text-werk-lime transition-colors">
-                      <Heart className="w-4 h-4" />
-                      <span className="text-xs">12</span>
-                    </button>
-                    <button className="flex items-center gap-1 text-muted-foreground hover:text-werk-cyan transition-colors">
-                      <ThumbsUp className="w-4 h-4" />
-                      <span className="text-xs">8</span>
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+            {/* Phone mockups with screenshots */}
+            <div className="relative w-44 md:w-52">
+              <div className="bg-black rounded-[2.5rem] p-1.5 shadow-2xl">
+                <img 
+                  src={noticemeFeed} 
+                  alt="NoticeMe recognition feed" 
+                  className="rounded-[2rem] w-full h-auto"
+                />
+              </div>
+            </div>
+            <div className="relative w-44 md:w-52 mt-8">
+              <div className="bg-black rounded-[2.5rem] p-1.5 shadow-2xl">
+                <img 
+                  src={noticemeDetail} 
+                  alt="NoticeMe recognition detail" 
+                  className="rounded-[2rem] w-full h-auto"
+                />
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
