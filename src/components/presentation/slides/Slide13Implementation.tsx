@@ -92,6 +92,7 @@ export const Slide13Implementation = () => {
           </div>
         </div>
         
+        {/* Hidden for now
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -100,6 +101,7 @@ export const Slide13Implementation = () => {
         >
           Includes Dealership Culture Coach
         </motion.div>
+        */}
       </div>
     </div>
   );
