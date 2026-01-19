@@ -5,7 +5,7 @@ import { Heart, Trophy, BarChart3, MessageSquare, Gift, Users } from 'lucide-rea
 
 export const Slide10OnePlatform = () => {
   const features = [
-    { icon: Heart, title: 'Emotional Check-ins', desc: 'Daily pulse on team sentiment' },
+    { icon: Heart, title: 'Check-Ins', desc: 'Daily pulse on team sentiment' },
     { icon: BarChart3, title: 'Manager Dashboard', desc: 'Actionable insights at a glance' },
     { icon: Trophy, title: 'Gamification', desc: 'Challenges that drive results' },
     { icon: MessageSquare, title: 'Recognition', desc: 'Peer-to-peer appreciation' },

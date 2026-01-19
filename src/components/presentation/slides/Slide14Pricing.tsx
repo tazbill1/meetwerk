@@ -11,7 +11,7 @@ export const Slide14Pricing = () => {
       description: 'For single rooftops getting started',
       employees: 'Up to 50 employees',
       features: [
-        'Emotional check-ins',
+        'Check-Ins',
         'Basic recognition',
         'Manager dashboard',
         'Email support',

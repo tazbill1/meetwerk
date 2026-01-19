@@ -28,7 +28,7 @@ export const Slide15EmotionalCheckins = () => {
               <span className="text-sm font-semibold uppercase tracking-wider">Feature Spotlight</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-              Emotional <span className="text-gradient-werk">Check-ins</span>
+              <span className="text-gradient-werk">Check-Ins</span>
             </h2>
             <p className="mt-6 text-xl text-white/70">
               Quick daily pulse checks that take 10 seconds but reveal 
