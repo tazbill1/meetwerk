@@ -69,8 +69,8 @@ export const SlideCalculator = () => {
                 <Slider
                   value={[employees]}
                   onValueChange={(val) => setEmployees(val[0])}
-                  min={10}
-                  max={200}
+                  min={0}
+                  max={500}
                   step={5}
                   className="w-full"
                 />
