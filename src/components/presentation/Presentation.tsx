@@ -6,6 +6,7 @@ import { DealershipProvider } from '@/contexts/DealershipContext';
 import * as Slides from './slides';
 
 const slideComponents = [
+  Slides.Slide00Cover,
   Slides.Slide01Hero,
   Slides.SlideDataInput,
   Slides.Slide02ApathyProblem,

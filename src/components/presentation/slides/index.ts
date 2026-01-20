@@ -1,3 +1,4 @@
+export { Slide00Cover } from './Slide00Cover';
 export { Slide01Hero } from './Slide01Hero';
 export { SlideDataInput } from './SlideDataInput';
 export { Slide02ApathyProblem } from './Slide02ApathyProblem';
