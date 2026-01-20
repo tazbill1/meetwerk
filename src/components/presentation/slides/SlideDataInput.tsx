@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
-import { Users, TrendingDown, DollarSign, SkipForward, AlertTriangle } from 'lucide-react';
+import { Users, TrendingDown, DollarSign, SkipForward, AlertTriangle, Pencil, Calculator } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
+import { Switch } from '@/components/ui/switch';
 import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
 import { SlideHeader } from '../SlideHeader';
 
 export const SlideDataInput = () => {
-  const { data, setData, employeesLost, annualTurnoverCost } = useDealership();
+  const { data, setData, employeesLost, replacementCostPerEmployee, annualTurnoverCost } = useDealership();
 
   return (
     <div className="relative w-full h-full gradient-werk-dark flex items-center justify-center overflow-hidden">
@@ -161,9 +162,51 @@ export const SlideDataInput = () => {
                 <span className="text-white font-semibold">{employeesLost} people</span>
               </div>
               
-              <div className="flex justify-between items-center text-sm">
-                <span className="text-white/70">× Replacement cost (25%)</span>
-                <span className="text-white font-semibold">${(data.avgSalary * 0.25).toLocaleString()}</span>
+              {/* Custom vs Estimated Toggle */}
+              <div className="border-t border-white/10 pt-3">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    {data.useCustomReplacementCost ? (
+                      <Pencil className="w-3 h-3 text-werk-lime" />
+                    ) : (
+                      <Calculator className="w-3 h-3 text-white/50" />
+                    )}
+                    <span className="text-white/70 text-sm">
+                      {data.useCustomReplacementCost ? 'Your cost to replace' : 'Est. replacement cost (25%)'}
+                    </span>
+                  </div>
+                  <Switch
+                    checked={data.useCustomReplacementCost}
+                    onCheckedChange={(checked) => setData({ useCustomReplacementCost: checked })}
+                    className="scale-75"
+                  />
+                </div>
+                
+                {data.useCustomReplacementCost ? (
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-white/50 text-xs">Cost to hire + train</span>
+                      <span className="text-werk-lime font-bold">${data.customReplacementCost.toLocaleString()}</span>
+                    </div>
+                    <Slider
+                      value={[data.customReplacementCost]}
+                      onValueChange={(val) => setData({ customReplacementCost: val[0] })}
+                      min={5000}
+                      max={100000}
+                      step={1000}
+                      className="w-full"
+                    />
+                    <div className="flex justify-between text-white/30 text-xs">
+                      <span>$5K</span>
+                      <span>$100K</span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-white/50 text-xs">25% of ${data.avgSalary.toLocaleString()}</span>
+                    <span className="text-white font-semibold">${replacementCostPerEmployee.toLocaleString()}</span>
+                  </div>
+                )}
               </div>
               
               <div className="border-t border-white/10 pt-3 flex justify-between items-center">
@@ -173,7 +216,9 @@ export const SlideDataInput = () => {
             </div>
 
             <p className="text-white/40 text-xs mt-4 text-center">
-              *Industry studies cite 50-200% of salary for replacement costs. We use 25% to be conservative.
+              {data.useCustomReplacementCost 
+                ? "*Using your actual cost to hire and onboard new employees."
+                : "*Industry studies cite 50-200% of salary. We use 25% to be conservative."}
             </p>
           </motion.div>
         </div>
