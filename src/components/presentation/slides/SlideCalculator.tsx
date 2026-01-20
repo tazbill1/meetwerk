@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, DollarSign, TrendingDown, TrendingUp, Info } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
@@ -8,27 +7,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
 
 export const SlideCalculator = () => {
-  const [employees, setEmployees] = useState(50);
-  const [turnoverRate, setTurnoverRate] = useState(40);
-  const [avgSalary, setAvgSalary] = useState(45000);
-
-  // Calculate turnover cost (using 25% of salary as conservative estimate)
-  const replacementCostMultiplier = 0.25;
-  const employeesLost = Math.round(employees * (turnoverRate / 100));
-  const annualTurnoverCost = employeesLost * avgSalary * replacementCostMultiplier;
-  
-  // Potential savings with 30% reduction in turnover (conservative WerkandMe improvement)
-  const improvementRate = 0.30;
-  const potentialSavings = annualTurnoverCost * improvementRate;
-
-  const formatCurrency = (value: number) => {
-    if (value >= 1000000) {
-      return `$${(value / 1000000).toFixed(1)}M`;
-    }
-    return `$${(value / 1000).toFixed(0)}K`;
-  };
+  const { data, setData, employeesLost, annualTurnoverCost, potentialSavings } = useDealership();
 
   return (
     <div className="relative w-full h-full gradient-werk-dark flex items-center justify-center overflow-hidden">
@@ -69,11 +51,11 @@ export const SlideCalculator = () => {
               <div>
                 <div className="flex justify-between mb-2">
                   <label className="text-white/80 text-sm">Total Employees</label>
-                  <span className="text-werk-lime font-bold">{employees}</span>
+                  <span className="text-werk-lime font-bold">{data.employees}</span>
                 </div>
                 <Slider
-                  value={[employees]}
-                  onValueChange={(val) => setEmployees(val[0])}
+                  value={[data.employees]}
+                  onValueChange={(val) => setData({ employees: val[0] })}
                   min={0}
                   max={500}
                   step={5}
@@ -85,11 +67,11 @@ export const SlideCalculator = () => {
               <div>
                 <div className="flex justify-between mb-2">
                   <label className="text-white/80 text-sm">Annual Turnover Rate</label>
-                  <span className="text-werk-lime font-bold">{turnoverRate}%</span>
+                  <span className="text-werk-lime font-bold">{data.turnoverRate}%</span>
                 </div>
                 <Slider
-                  value={[turnoverRate]}
-                  onValueChange={(val) => setTurnoverRate(val[0])}
+                  value={[data.turnoverRate]}
+                  onValueChange={(val) => setData({ turnoverRate: val[0] })}
                   min={10}
                   max={80}
                   step={5}
@@ -101,11 +83,11 @@ export const SlideCalculator = () => {
               <div>
                 <div className="flex justify-between mb-2">
                   <label className="text-white/80 text-sm">Average Salary</label>
-                  <span className="text-werk-lime font-bold">${avgSalary.toLocaleString()}</span>
+                  <span className="text-werk-lime font-bold">${data.avgSalary.toLocaleString()}</span>
                 </div>
                 <Slider
-                  value={[avgSalary]}
-                  onValueChange={(val) => setAvgSalary(val[0])}
+                  value={[data.avgSalary]}
+                  onValueChange={(val) => setData({ avgSalary: val[0] })}
                   min={30000}
                   max={200000}
                   step={5000}
