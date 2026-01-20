@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
 import { RefreshCw, ArrowRight } from 'lucide-react';
+import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
 
 export const Slide04ViciousCycle = () => {
+  const { annualTurnoverCost, data } = useDealership();
+
   const cycleItems = [
     { label: 'Low Engagement', color: 'bg-werk-lime' },
     { label: 'Poor Performance', color: 'bg-werk-cyan' },
@@ -73,7 +76,11 @@ export const Slide04ViciousCycle = () => {
           className="mt-16 bg-gradient-to-r from-werk-navy to-werk-dark rounded-2xl p-8 text-center text-white"
         >
           <div className="text-2xl md:text-3xl font-bold mb-2">
-            Combined Annual Loss: <span className="text-werk-lime">$720K+</span>
+            {data.hasCustomData ? (
+              <>Your Estimated Annual Loss: <span className="text-werk-lime">{formatCurrency(annualTurnoverCost)}</span></>
+            ) : (
+              <>Combined Annual Loss: <span className="text-werk-lime">{formatCurrency(annualTurnoverCost)}+</span></>
+            )}
           </div>
           <p className="text-white/70">
             And it compounds year over year as institutional knowledge walks out the door

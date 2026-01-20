@@ -2,10 +2,12 @@ import { useSlideNavigation } from '@/hooks/useSlideNavigation';
 import { SlideContainer } from './SlideContainer';
 import { ProgressBar } from './ProgressBar';
 import { NavigationControls } from './NavigationControls';
+import { DealershipProvider } from '@/contexts/DealershipContext';
 import * as Slides from './slides';
 
 const slideComponents = [
   Slides.Slide01Hero,
+  Slides.SlideDataInput,
   Slides.Slide02ApathyProblem,
   Slides.Slide03TurnoverProblem,
   Slides.Slide04ViciousCycle,
@@ -44,25 +46,27 @@ export const Presentation = () => {
   const CurrentSlideComponent = slideComponents[currentSlide];
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-background">
-      <ProgressBar 
-        progress={progress} 
-        currentSlide={currentSlide} 
-        totalSlides={slideComponents.length} 
-      />
-      
-      <div className="relative w-full h-full">
-        <SlideContainer slideKey={currentSlide} direction={direction}>
-          <CurrentSlideComponent />
-        </SlideContainer>
+    <DealershipProvider>
+      <div className="relative w-full h-screen overflow-hidden bg-background">
+        <ProgressBar 
+          progress={progress} 
+          currentSlide={currentSlide} 
+          totalSlides={slideComponents.length} 
+        />
+        
+        <div className="relative w-full h-full">
+          <SlideContainer slideKey={currentSlide} direction={direction}>
+            <CurrentSlideComponent />
+          </SlideContainer>
+        </div>
+        
+        <NavigationControls
+          onPrev={prevSlide}
+          onNext={nextSlide}
+          isFirstSlide={isFirstSlide}
+          isLastSlide={isLastSlide}
+        />
       </div>
-      
-      <NavigationControls
-        onPrev={prevSlide}
-        onNext={nextSlide}
-        isFirstSlide={isFirstSlide}
-        isLastSlide={isLastSlide}
-      />
-    </div>
+    </DealershipProvider>
   );
 };

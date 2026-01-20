@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
 import werkLogo from '@/assets/werkandme-logo.png';
+import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
 
 export const Slide22CTA = () => {
+  const { potentialSavings, data } = useDealership();
+
   return (
     <div className="relative w-full h-full gradient-werk-dark flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 opacity-20">
@@ -30,10 +33,24 @@ export const Slide22CTA = () => {
           Thank You
         </motion.h2>
         
+        {data.hasCustomData && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="mt-8 bg-werk-lime/20 backdrop-blur-sm rounded-2xl p-6 border border-werk-lime/30 inline-block"
+          >
+            <p className="text-white/70 text-sm mb-1">Your Potential Annual Savings</p>
+            <p className="text-4xl md:text-5xl font-bold text-werk-lime">
+              {formatCurrency(potentialSavings)}
+            </p>
+          </motion.div>
+        )}
+        
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.4 }}
           className="mt-6 text-xl text-white/70"
         >
           Questions?
