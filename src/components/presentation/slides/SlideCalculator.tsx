@@ -107,7 +107,7 @@ export const SlideCalculator = () => {
                   value={[avgSalary]}
                   onValueChange={(val) => setAvgSalary(val[0])}
                   min={30000}
-                  max={80000}
+                  max={200000}
                   step={5000}
                   className="w-full"
                 />
