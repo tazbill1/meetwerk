@@ -34,7 +34,7 @@ export const SlideCalculator = () => {
       
       
       
-      <div className="relative z-10 w-full max-w-5xl px-8">
+      <div className="relative z-10 w-full max-w-5xl px-8 pb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
