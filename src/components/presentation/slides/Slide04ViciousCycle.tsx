@@ -2,9 +2,10 @@ import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
 import { RefreshCw, ArrowRight } from 'lucide-react';
 import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 export const Slide04ViciousCycle = () => {
-  const { annualTurnoverCost, data } = useDealership();
+  const { annualTurnoverCost, employeesLost, data } = useDealership();
 
   const cycleItems = [
     { label: 'Low Engagement', color: 'bg-werk-lime' },
@@ -75,13 +76,27 @@ export const Slide04ViciousCycle = () => {
           transition={{ delay: 1.2 }}
           className="mt-16 bg-gradient-to-r from-werk-navy to-werk-dark rounded-2xl p-8 text-center text-white"
         >
-          <div className="text-2xl md:text-3xl font-bold mb-2">
-            {data.hasCustomData ? (
-              <>Your Estimated Annual Loss: <span className="text-werk-lime">{formatCurrency(annualTurnoverCost)}</span></>
-            ) : (
-              <>Combined Annual Loss: <span className="text-werk-lime">{formatCurrency(annualTurnoverCost)}+</span></>
-            )}
-          </div>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div className="text-2xl md:text-3xl font-bold mb-2 cursor-help">
+                  {data.hasCustomData ? (
+                    <>Your Estimated Annual Loss: <span className="text-werk-lime underline decoration-dotted">{formatCurrency(annualTurnoverCost)}</span></>
+                  ) : (
+                    <>Combined Annual Loss: <span className="text-werk-lime underline decoration-dotted">{formatCurrency(annualTurnoverCost)}+</span></>
+                  )}
+                </div>
+              </TooltipTrigger>
+              <TooltipContent side="top" className="max-w-xs bg-background text-foreground border p-4">
+                <div className="text-sm space-y-1">
+                  <div className="font-semibold mb-2">Calculation Breakdown:</div>
+                  <div>{data.employees} employees × {data.turnoverRate}% turnover = <strong>{employeesLost} employees lost</strong></div>
+                  <div>{employeesLost} × {formatCurrency(data.avgSalary)} × 25% replacement cost</div>
+                  <div className="pt-2 border-t mt-2 font-semibold">= {formatCurrency(annualTurnoverCost)}</div>
+                </div>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
           <p className="text-white/70">
             And it compounds year over year as institutional knowledge walks out the door
           </p>
