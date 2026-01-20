@@ -7,7 +7,7 @@ export const Slide04ViciousCycle = () => {
     { label: 'Low Engagement', color: 'bg-werk-lime' },
     { label: 'Poor Performance', color: 'bg-werk-cyan' },
     { label: 'Manager Frustration', color: 'bg-werk-blue' },
-    { label: 'Negative Impact on Culture', color: 'bg-werk-navy' },
+    { label: 'Impact on Culture', color: 'bg-werk-navy' },
     { label: 'High Turnover', color: 'bg-destructive' },
     { label: 'Constant Rehiring', color: 'bg-werk-dark' },
   ];
