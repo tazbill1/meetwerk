@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-
-import { Calculator, DollarSign, TrendingDown, TrendingUp } from 'lucide-react';
+import { Calculator, DollarSign, TrendingDown, TrendingUp, Info } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 export const SlideCalculator = () => {
   const [employees, setEmployees] = useState(50);
@@ -124,36 +129,64 @@ export const SlideCalculator = () => {
             className="space-y-4"
           >
             {/* Current Cost */}
-            <div className="bg-red-500/20 backdrop-blur-sm rounded-2xl p-6 border border-red-500/30">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 rounded-full bg-red-500/30 flex items-center justify-center">
-                  <TrendingDown className="w-5 h-5 text-red-400" />
+            <TooltipProvider>
+              <div className="bg-red-500/20 backdrop-blur-sm rounded-2xl p-6 border border-red-500/30">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 rounded-full bg-red-500/30 flex items-center justify-center">
+                    <TrendingDown className="w-5 h-5 text-red-400" />
+                  </div>
+                  <span className="text-white/80 text-sm">Annual Turnover Cost</span>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Info className="w-4 h-4 text-white/40 hover:text-white/70 cursor-help transition-colors" />
+                    </TooltipTrigger>
+                    <TooltipContent side="top" className="max-w-xs bg-background text-foreground border">
+                      <p className="font-semibold mb-1">Calculation:</p>
+                      <p className="text-sm">Employees Lost × Avg Salary × 25%</p>
+                      <p className="text-xs text-muted-foreground mt-2">
+                        25% is a conservative estimate. Industry studies show replacement costs range from 50-200% of salary.
+                      </p>
+                    </TooltipContent>
+                  </Tooltip>
                 </div>
-                <span className="text-white/80 text-sm">Annual Turnover Cost</span>
+                <div className="text-4xl md:text-5xl font-bold text-red-400">
+                  {formatCurrency(annualTurnoverCost)}
+                </div>
+                <div className="text-white/50 text-xs mt-1">
+                  Based on 25% of salary replacement cost
+                </div>
               </div>
-              <div className="text-4xl md:text-5xl font-bold text-red-400">
-                {formatCurrency(annualTurnoverCost)}
-              </div>
-              <div className="text-white/50 text-xs mt-1">
-                Based on 25% of salary replacement cost
-              </div>
-            </div>
+            </TooltipProvider>
             
             {/* Potential Savings */}
-            <div className="bg-werk-lime/20 backdrop-blur-sm rounded-2xl p-6 border border-werk-lime/30">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 rounded-full bg-werk-lime/30 flex items-center justify-center">
-                  <TrendingUp className="w-5 h-5 text-werk-lime" />
+            <TooltipProvider>
+              <div className="bg-werk-lime/20 backdrop-blur-sm rounded-2xl p-6 border border-werk-lime/30">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 rounded-full bg-werk-lime/30 flex items-center justify-center">
+                    <TrendingUp className="w-5 h-5 text-werk-lime" />
+                  </div>
+                  <span className="text-white/80 text-sm">Potential Savings with WerkandMe</span>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Info className="w-4 h-4 text-white/40 hover:text-white/70 cursor-help transition-colors" />
+                    </TooltipTrigger>
+                    <TooltipContent side="top" className="max-w-xs bg-background text-foreground border">
+                      <p className="font-semibold mb-1">Calculation:</p>
+                      <p className="text-sm">Annual Turnover Cost × 30%</p>
+                      <p className="text-xs text-muted-foreground mt-2">
+                        30% reduction is based on average improvements seen with engaged employees. Some clients see 40-50% reductions.
+                      </p>
+                    </TooltipContent>
+                  </Tooltip>
                 </div>
-                <span className="text-white/80 text-sm">Potential Savings with WerkandMe</span>
+                <div className="text-4xl md:text-5xl font-bold text-werk-lime">
+                  {formatCurrency(potentialSavings)}
+                </div>
+                <div className="text-white/50 text-xs mt-1">
+                  With 30% reduction in turnover
+                </div>
               </div>
-              <div className="text-4xl md:text-5xl font-bold text-werk-lime">
-                {formatCurrency(potentialSavings)}
-              </div>
-              <div className="text-white/50 text-xs mt-1">
-                With 30% reduction in turnover
-              </div>
-            </div>
+            </TooltipProvider>
             
             {/* ROI Callout */}
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 text-center">
