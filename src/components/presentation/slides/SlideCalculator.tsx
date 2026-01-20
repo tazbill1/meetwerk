@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
+
 import { Calculator, DollarSign, TrendingDown, TrendingUp } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
 
@@ -32,7 +32,7 @@ export const SlideCalculator = () => {
         <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-werk-cyan blur-3xl" />
       </div>
       
-      <SlideHeader light />
+      
       
       <div className="relative z-10 w-full max-w-5xl px-8">
         <motion.div
