@@ -7,8 +7,8 @@ import * as Slides from './slides';
 
 const slideComponents = [
   Slides.Slide00Cover,
-  Slides.Slide01Hero,
   Slides.SlideDataInput,
+  Slides.Slide01Hero,
   Slides.Slide02ApathyProblem,
   Slides.Slide03TurnoverProblem,
   Slides.Slide04ViciousCycle,
