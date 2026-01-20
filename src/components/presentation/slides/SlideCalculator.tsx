@@ -9,8 +9,8 @@ export const SlideCalculator = () => {
   const [turnoverRate, setTurnoverRate] = useState(40);
   const [avgSalary, setAvgSalary] = useState(45000);
 
-  // Calculate turnover cost (industry standard: 50-200% of salary, using 75% as conservative)
-  const replacementCostMultiplier = 0.75;
+  // Calculate turnover cost (using 25% of salary as conservative estimate)
+  const replacementCostMultiplier = 0.25;
   const employeesLost = Math.round(employees * (turnoverRate / 100));
   const annualTurnoverCost = employeesLost * avgSalary * replacementCostMultiplier;
   
@@ -135,7 +135,7 @@ export const SlideCalculator = () => {
                 {formatCurrency(annualTurnoverCost)}
               </div>
               <div className="text-white/50 text-xs mt-1">
-                Based on 75% of salary replacement cost
+                Based on 25% of salary replacement cost
               </div>
             </div>
             
