@@ -6,6 +6,7 @@ interface DealershipData {
   avgSalary: number;
   useCustomReplacementCost: boolean;
   customReplacementCost: number;
+  improvementRate: number;
   hasCustomData: boolean;
 }
 
@@ -26,11 +27,11 @@ const DEFAULT_DATA: DealershipData = {
   avgSalary: 45000,
   useCustomReplacementCost: false,
   customReplacementCost: 15000,
+  improvementRate: 30,
   hasCustomData: false,
 };
 
 const DEFAULT_REPLACEMENT_COST_MULTIPLIER = 0.25;
-const IMPROVEMENT_RATE = 0.30;
 
 const DealershipContext = createContext<DealershipContextType | undefined>(undefined);
 
@@ -55,7 +56,7 @@ export const DealershipProvider = ({ children }: { children: ReactNode }) => {
     ? data.customReplacementCost 
     : data.avgSalary * DEFAULT_REPLACEMENT_COST_MULTIPLIER;
   const annualTurnoverCost = employeesLost * replacementCostPerEmployee;
-  const potentialSavings = annualTurnoverCost * IMPROVEMENT_RATE;
+  const potentialSavings = annualTurnoverCost * (data.improvementRate / 100);
 
   return (
     <DealershipContext.Provider value={{

@@ -89,7 +89,7 @@ export const Slide12ProvenResults = () => {
               {data.hasCustomData ? 'Your potential annual savings' : 'Your estimated annual savings'}
             </div>
             <div className="text-white/50 text-xs mt-2">
-              30% reduction of {formatCurrency(annualTurnoverCost)} turnover cost
+              {data.improvementRate}% reduction of {formatCurrency(annualTurnoverCost)} turnover cost
             </div>
           </div>
         </motion.div>
