@@ -185,7 +185,7 @@ export const SlideDataInput = () => {
                 {data.useCustomReplacementCost ? (
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-white/50 text-xs">Cost to hire + train</span>
+                      <span className="text-white/50 text-xs">Cost to hire + train + ramp</span>
                       <span className="text-werk-lime font-bold">${data.customReplacementCost.toLocaleString()}</span>
                     </div>
                     <Slider
