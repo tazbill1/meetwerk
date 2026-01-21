@@ -12,7 +12,7 @@ const slideComponents = [
   
   // Problem & Why
   Slides.Slide01Hero,
-  Slides.Slide02ApathyProblem,
+  Slides.SlideProblem,
   Slides.Slide05NotTrustFalls,
   Slides.Slide06WorkforceChanged,
   Slides.Slide07WhyInvest,
@@ -35,7 +35,6 @@ const slideComponents = [
   // Close Sequence
   Slides.Slide12ProvenResults,
   Slides.Slide13Implementation,
-  Slides.Slide03TurnoverProblem,
   Slides.Slide22CTA,
 ];
 

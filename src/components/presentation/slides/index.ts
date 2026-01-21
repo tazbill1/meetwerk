@@ -1,8 +1,7 @@
 export { Slide00Cover } from './Slide00Cover';
 export { Slide01Hero } from './Slide01Hero';
 export { SlideDataInput } from './SlideDataInput';
-export { Slide02ApathyProblem } from './Slide02ApathyProblem';
-export { Slide03TurnoverProblem } from './Slide03TurnoverProblem';
+export { SlideProblem } from './SlideProblem';
 export { Slide05NotTrustFalls } from './Slide05NotTrustFalls';
 export { Slide06WorkforceChanged } from './Slide06WorkforceChanged';
 export { Slide07WhyInvest } from './Slide07WhyInvest';
