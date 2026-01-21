@@ -245,3 +245,53 @@
   height: 100vh;
   height: 100dvh;
 }
+
+/* Print styles for presentation */
+@media print {
+  @page {
+    size: landscape;
+    margin: 0;
+  }
+  
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Hide navigation elements */
+  .print\\:hidden,
+  [data-print-hidden="true"] {
+    display: none !important;
+  }
+  
+  /* Each slide becomes a print page */
+  .print-slide {
+    page-break-after: always;
+    break-after: page;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .print-slide:last-child {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  /* Preserve gradients and colors */
+  .gradient-werk,
+  .gradient-werk-horizontal,
+  .gradient-werk-dark,
+  .gradient-werk-accent {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Ensure text gradients work */
+  .text-gradient-werk {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
