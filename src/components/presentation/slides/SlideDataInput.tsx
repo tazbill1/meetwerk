@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { Users, TrendingDown, DollarSign, SkipForward, AlertTriangle, Pencil, Calculator, TrendingUp, Sparkles, Star, Heart, Award } from 'lucide-react';
+import { Users, TrendingDown, DollarSign, SkipForward, AlertTriangle, Pencil, Calculator } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
 import { SlideHeader } from '../SlideHeader';
 
 export const SlideDataInput = () => {
-  const { data, setData, employeesLost, replacementCostPerEmployee, annualTurnoverCost, potentialSavings } = useDealership();
+  const { data, setData, employeesLost, replacementCostPerEmployee, annualTurnoverCost } = useDealership();
 
   return (
     <div className="relative w-full h-full gradient-werk-dark flex items-center justify-center overflow-hidden">
@@ -17,40 +17,40 @@ export const SlideDataInput = () => {
       
       <SlideHeader light />
       
-      <div className="relative z-10 w-full max-w-6xl px-6 pb-12">
+      <div className="relative z-10 w-full max-w-5xl px-8 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-6"
+          className="text-center mb-8"
         >
-          <div className="inline-flex items-center gap-2 text-werk-lime mb-2">
+          <div className="inline-flex items-center gap-2 text-werk-lime mb-3">
             <Users className="w-5 h-5" />
             <span className="text-sm font-semibold uppercase tracking-wider">Personalize Your Presentation</span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
             Tell Us About <span className="text-werk-lime">Your Dealership</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Left: Inputs */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1 }}
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/20"
+            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
           >
-            <div className="space-y-5">
+            <div className="space-y-6">
               {/* Employees */}
               <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-werk-lime/20 flex items-center justify-center">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 rounded-full bg-werk-lime/20 flex items-center justify-center">
                     <Users className="w-4 h-4 text-werk-lime" />
                   </div>
                   <div className="flex-1">
                     <label className="text-white font-medium text-sm">Team members</label>
                   </div>
-                  <span className="text-werk-lime font-bold text-lg">{data.employees}</span>
+                  <span className="text-werk-lime font-bold text-xl">{data.employees}</span>
                 </div>
                 <Slider
                   value={[data.employees]}
@@ -68,14 +68,14 @@ export const SlideDataInput = () => {
               
               {/* Turnover Rate */}
               <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-werk-cyan/20 flex items-center justify-center">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 rounded-full bg-werk-cyan/20 flex items-center justify-center">
                     <TrendingDown className="w-4 h-4 text-werk-cyan" />
                   </div>
                   <div className="flex-1">
                     <label className="text-white font-medium text-sm">Annual turnover rate</label>
                   </div>
-                  <span className="text-werk-cyan font-bold text-lg">{data.turnoverRate}%</span>
+                  <span className="text-werk-cyan font-bold text-xl">{data.turnoverRate}%</span>
                 </div>
                 <Slider
                   value={[data.turnoverRate]}
@@ -93,14 +93,14 @@ export const SlideDataInput = () => {
               
               {/* Average Salary */}
               <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-werk-blue/20 flex items-center justify-center">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 rounded-full bg-werk-blue/20 flex items-center justify-center">
                     <DollarSign className="w-4 h-4 text-werk-blue" />
                   </div>
                   <div className="flex-1">
                     <label className="text-white font-medium text-sm">Average salary</label>
                   </div>
-                  <span className="text-werk-blue font-bold text-lg">${data.avgSalary.toLocaleString()}</span>
+                  <span className="text-werk-blue font-bold text-xl">${data.avgSalary.toLocaleString()}</span>
                 </div>
                 <Slider
                   value={[data.avgSalary]}
@@ -115,53 +115,28 @@ export const SlideDataInput = () => {
                   <span>$200K</span>
                 </div>
               </div>
-
-              {/* Expected Improvement Rate */}
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-werk-lime/20 flex items-center justify-center">
-                    <TrendingUp className="w-4 h-4 text-werk-lime" />
-                  </div>
-                  <div className="flex-1">
-                    <label className="text-white font-medium text-sm">Expected improvement</label>
-                  </div>
-                  <span className="text-werk-lime font-bold text-lg">{data.improvementRate}%</span>
-                </div>
-                <Slider
-                  value={[data.improvementRate]}
-                  onValueChange={(val) => setData({ improvementRate: val[0] })}
-                  min={10}
-                  max={50}
-                  step={5}
-                  className="w-full"
-                />
-                <div className="flex justify-between text-white/40 text-xs mt-1">
-                  <span>10%</span>
-                  <span>50%</span>
-                </div>
-              </div>
             </div>
 
-            <p className="text-white/40 text-xs flex items-center gap-2 mt-3">
+            <p className="text-white/40 text-xs flex items-center gap-2 mt-4">
               <SkipForward className="w-3 h-3" />
               Using industry averages as defaults
             </p>
           </motion.div>
 
-          {/* Center: Cost of Apathy */}
+          {/* Right: Cost of Apathy */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-gradient-to-br from-red-500/20 to-orange-500/20 backdrop-blur-sm rounded-2xl p-5 border border-red-500/30"
+            className="bg-gradient-to-br from-red-500/20 to-orange-500/20 backdrop-blur-sm rounded-2xl p-6 border border-red-500/30"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 rounded-full bg-red-500/20 flex items-center justify-center">
-                <AlertTriangle className="w-4 h-4 text-red-400" />
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
+                <AlertTriangle className="w-5 h-5 text-red-400" />
               </div>
               <div>
-                <h3 className="text-white font-bold text-base">The Cost of Apathy</h3>
-                <p className="text-white/50 text-xs">Conservative estimate</p>
+                <h3 className="text-white font-bold text-lg">The Cost of Apathy</h3>
+                <p className="text-white/50 text-sm">Conservative estimate</p>
               </div>
             </div>
 
@@ -170,17 +145,17 @@ export const SlideDataInput = () => {
               key={annualTurnoverCost}
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              className="text-center py-4"
+              className="text-center py-6"
             >
-              <p className="text-red-400 font-black text-4xl md:text-5xl">
+              <p className="text-red-400 font-black text-5xl md:text-6xl">
                 {formatCurrency(annualTurnoverCost)}
               </p>
-              <p className="text-white/60 text-sm mt-1">lost annually to turnover</p>
+              <p className="text-white/60 mt-2">lost annually to turnover</p>
             </motion.div>
 
             {/* Breakdown */}
-            <div className="bg-black/20 rounded-xl p-3 space-y-2">
-              <p className="text-white/50 text-xs uppercase tracking-wider font-semibold mb-2">The Math</p>
+            <div className="bg-black/20 rounded-xl p-4 space-y-3">
+              <p className="text-white/50 text-xs uppercase tracking-wider font-semibold mb-3">The Math</p>
               
               <div className="flex justify-between items-center text-sm">
                 <span className="text-white/70">Employees lost per year</span>
@@ -188,15 +163,15 @@ export const SlideDataInput = () => {
               </div>
               
               {/* Custom vs Estimated Toggle */}
-              <div className="border-t border-white/10 pt-2">
-                <div className="flex items-center justify-between mb-2">
+              <div className="border-t border-white/10 pt-3">
+                <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
                     {data.useCustomReplacementCost ? (
                       <Pencil className="w-3 h-3 text-werk-lime" />
                     ) : (
                       <Calculator className="w-3 h-3 text-white/50" />
                     )}
-                    <span className="text-white/70 text-xs">
+                    <span className="text-white/70 text-sm">
                       {data.useCustomReplacementCost ? 'Your cost to replace' : 'Est. replacement cost (25%)'}
                     </span>
                   </div>
@@ -208,10 +183,10 @@ export const SlideDataInput = () => {
                 </div>
                 
                 {data.useCustomReplacementCost ? (
-                  <div className="space-y-1">
+                  <div className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="text-white/50 text-xs">Cost to hire + train + ramp</span>
-                      <span className="text-werk-lime font-bold text-sm">${data.customReplacementCost.toLocaleString()}</span>
+                      <span className="text-werk-lime font-bold">${data.customReplacementCost.toLocaleString()}</span>
                     </div>
                     <Slider
                       value={[data.customReplacementCost]}
@@ -234,80 +209,16 @@ export const SlideDataInput = () => {
                 )}
               </div>
               
-              <div className="border-t border-white/10 pt-2 flex justify-between items-center">
+              <div className="border-t border-white/10 pt-3 flex justify-between items-center">
                 <span className="text-white/70 text-sm">Annual impact</span>
                 <span className="text-red-400 font-bold">{formatCurrency(annualTurnoverCost)}</span>
               </div>
             </div>
 
-            {/* Potential Savings */}
-            <div className="mt-3 bg-werk-lime/10 border border-werk-lime/30 rounded-xl p-3 text-center">
-              <p className="text-werk-lime font-bold text-2xl">{formatCurrency(potentialSavings)}</p>
-              <p className="text-white/60 text-xs mt-1">
-                potential savings ({data.improvementRate}% improvement)
-              </p>
-            </div>
-
-            <p className="text-white/40 text-xs mt-3 text-center">
+            <p className="text-white/40 text-xs mt-4 text-center">
               {data.useCustomReplacementCost 
-                ? "*Using your actual cost to hire and onboard."
-                : "*Industry studies cite 50-200% of salary. We use 25%."}
-            </p>
-          </motion.div>
-
-          {/* Right: Intangible Benefits */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
-            className="bg-gradient-to-br from-werk-lime/10 to-werk-cyan/10 backdrop-blur-sm rounded-2xl p-5 border border-werk-lime/20"
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 rounded-full bg-werk-lime/20 flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-werk-lime" />
-              </div>
-              <div>
-                <h3 className="text-white font-bold text-base">Beyond the Numbers</h3>
-                <p className="text-white/50 text-xs">Benefits we can't measure</p>
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              <div className="bg-white/5 rounded-xl p-3">
-                <div className="flex items-center gap-2 text-werk-lime mb-1">
-                  <Star className="w-4 h-4" />
-                  <span className="font-semibold text-sm">Higher CSI Scores</span>
-                </div>
-                <p className="text-white/60 text-xs">Engaged employees deliver better customer experiences, driving satisfaction and loyalty.</p>
-              </div>
-
-              <div className="bg-white/5 rounded-xl p-3">
-                <div className="flex items-center gap-2 text-werk-cyan mb-1">
-                  <Heart className="w-4 h-4" />
-                  <span className="font-semibold text-sm">Stronger Culture</span>
-                </div>
-                <p className="text-white/60 text-xs">Reduced toxicity, better teamwork, and employees who actually want to be there.</p>
-              </div>
-
-              <div className="bg-white/5 rounded-xl p-3">
-                <div className="flex items-center gap-2 text-werk-blue mb-1">
-                  <Award className="w-4 h-4" />
-                  <span className="font-semibold text-sm">Employer Brand</span>
-                </div>
-                <p className="text-white/60 text-xs">Become a destination employer — attract top talent instead of fighting for leftovers.</p>
-              </div>
-
-              <div className="bg-white/5 rounded-xl p-3">
-                <div className="flex items-center gap-2 text-werk-lime mb-1">
-                  <TrendingUp className="w-4 h-4" />
-                  <span className="font-semibold text-sm">Institutional Knowledge</span>
-                </div>
-                <p className="text-white/60 text-xs">Retained employees mean preserved customer relationships and process expertise.</p>
-              </div>
-            </div>
-
-            <p className="text-white/40 text-xs mt-4 text-center italic">
-              "The real ROI is in the things you can't put on a spreadsheet."
+                ? "*Using your actual cost to hire and onboard new employees."
+                : "*Industry studies cite 50-200% of salary. We use 25% to be conservative."}
             </p>
           </motion.div>
         </div>
