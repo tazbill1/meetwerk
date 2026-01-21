@@ -2,8 +2,11 @@ import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
 import { AnimatedStat } from '../AnimatedStat';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
 
 export const Slide12ProvenResults = () => {
+  const { potentialSavings, annualTurnoverCost, data } = useDealership();
+  
   const results = [
     { label: 'Employee Engagement', before: 32, after: 68, suffix: '%' },
     { label: 'Monthly Turnover', before: 8, after: 3, suffix: '%', inverse: true },
@@ -81,8 +84,13 @@ export const Slide12ProvenResults = () => {
           className="mt-8 text-center"
         >
           <div className="inline-block bg-werk-lime/20 border border-werk-lime/30 rounded-2xl px-8 py-4">
-            <div className="text-3xl font-bold text-werk-lime">$340K</div>
-            <div className="text-white/70 mt-1">Average annual savings per dealership</div>
+            <div className="text-3xl font-bold text-werk-lime">{formatCurrency(potentialSavings)}</div>
+            <div className="text-white/70 mt-1">
+              {data.hasCustomData ? 'Your potential annual savings' : 'Your estimated annual savings'}
+            </div>
+            <div className="text-white/50 text-xs mt-2">
+              30% reduction of {formatCurrency(annualTurnoverCost)} turnover cost
+            </div>
           </div>
         </motion.div>
       </div>
