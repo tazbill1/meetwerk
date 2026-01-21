@@ -56,7 +56,8 @@ export const DealershipProvider = ({ children }: { children: ReactNode }) => {
     ? data.customReplacementCost 
     : data.avgSalary * DEFAULT_REPLACEMENT_COST_MULTIPLIER;
   const annualTurnoverCost = employeesLost * replacementCostPerEmployee;
-  const potentialSavings = annualTurnoverCost * (data.improvementRate / 100);
+  const improvementRate = data.improvementRate ?? 30;
+  const potentialSavings = annualTurnoverCost * (improvementRate / 100);
 
   return (
     <DealershipContext.Provider value={{
