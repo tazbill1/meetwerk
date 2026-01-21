@@ -11,7 +11,6 @@ const slideComponents = [
   Slides.Slide01Hero,
   Slides.Slide02ApathyProblem,
   Slides.Slide03TurnoverProblem,
-  Slides.Slide04ViciousCycle,
   Slides.Slide05NotTrustFalls,
   Slides.Slide06WorkforceChanged,
   Slides.Slide07WhyInvest,
@@ -20,9 +19,7 @@ const slideComponents = [
   Slides.Slide10OnePlatform,
   Slides.Slide11WhatMakesDifferent,
   Slides.Slide12ProvenResults,
-  Slides.SlideCalculator,
   Slides.Slide13Implementation,
-  
   Slides.Slide15EmotionalCheckins,
   Slides.Slide16Dashboard,
   Slides.Slide17Gamification,
