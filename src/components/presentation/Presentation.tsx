@@ -6,8 +6,11 @@ import { DealershipProvider } from '@/contexts/DealershipContext';
 import * as Slides from './slides';
 
 const slideComponents = [
+  // Opening
   Slides.Slide00Cover,
   Slides.SlideDataInput,
+  
+  // Problem & Why
   Slides.Slide01Hero,
   Slides.Slide02ApathyProblem,
   Slides.Slide05NotTrustFalls,
@@ -15,17 +18,23 @@ const slideComponents = [
   Slides.Slide07WhyInvest,
   Slides.Slide08WhatTheyWant,
   Slides.Slide09EngagedEqualsPerformance,
+  
+  // Solution Overview
   Slides.Slide10OnePlatform,
   Slides.Slide11WhatMakesDifferent,
-  Slides.Slide12ProvenResults,
-  Slides.Slide13Implementation,
+  
+  // Features Deep-Dive
   Slides.Slide15EmotionalCheckins,
   Slides.Slide16Dashboard,
   Slides.Slide17Gamification,
-  Slides.Slide19Serving,
   Slides.Slide18Recognition,
+  Slides.Slide19Serving,
   Slides.Slide20Training,
   Slides.Slide21Rewards,
+  
+  // Close Sequence
+  Slides.Slide12ProvenResults,
+  Slides.Slide13Implementation,
   Slides.Slide03TurnoverProblem,
   Slides.Slide22CTA,
 ];
