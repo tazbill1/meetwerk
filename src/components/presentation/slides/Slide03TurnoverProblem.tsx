@@ -2,8 +2,11 @@ import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
 import { AnimatedStat } from '../AnimatedStat';
 import { UserX, DollarSign } from 'lucide-react';
+import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
 
 export const Slide03TurnoverProblem = () => {
+  const { data, annualTurnoverCost, employeesLost, replacementCostPerEmployee } = useDealership();
+
   return (
     <div className="relative w-full h-full bg-background flex items-center justify-center overflow-hidden">
       <SlideHeader />
@@ -68,16 +71,10 @@ export const Slide03TurnoverProblem = () => {
           >
             <div className="flex items-center gap-3 mb-4">
               <DollarSign className="w-8 h-8" />
-              <span className="text-lg font-medium">Cost Per Hire</span>
+              <span className="text-lg font-medium">Your Cost Per Hire</span>
             </div>
-            <AnimatedStat
-              value={10000}
-              prefix="$"
-              label="Replacement Cost"
-              sublabel="Per sales employee"
-              delay={600}
-              variant="default"
-            />
+            <div className="text-4xl md:text-5xl font-bold">{formatCurrency(replacementCostPerEmployee)}</div>
+            <div className="text-white/70 text-sm mt-2">Replacement cost per employee</div>
           </motion.div>
         </div>
         
@@ -87,12 +84,12 @@ export const Slide03TurnoverProblem = () => {
           transition={{ delay: 0.7 }}
           className="mt-8 bg-destructive/10 border border-destructive/20 rounded-2xl p-6 text-center"
         >
-          <div className="text-4xl md:text-5xl font-bold text-destructive">$480K+</div>
+          <div className="text-4xl md:text-5xl font-bold text-destructive">{formatCurrency(annualTurnoverCost)}</div>
           <div className="text-lg text-foreground mt-2">
-            Annual Turnover Cost for a Mid-Size Dealership
+            {data.hasCustomData ? 'Your Annual Turnover Cost' : 'Annual Turnover Cost (Based on Defaults)'}
           </div>
           <div className="text-sm text-muted-foreground mt-1">
-            Including recruiting, training, lost productivity, and customer churn
+            {employeesLost} employees × {formatCurrency(replacementCostPerEmployee)} replacement cost
           </div>
         </motion.div>
       </div>
