@@ -10,7 +10,6 @@ const slideComponents = [
   Slides.SlideDataInput,
   Slides.Slide01Hero,
   Slides.Slide02ApathyProblem,
-  Slides.Slide03TurnoverProblem,
   Slides.Slide05NotTrustFalls,
   Slides.Slide06WorkforceChanged,
   Slides.Slide07WhyInvest,
@@ -27,6 +26,7 @@ const slideComponents = [
   Slides.Slide18Recognition,
   Slides.Slide20Training,
   Slides.Slide21Rewards,
+  Slides.Slide03TurnoverProblem,
   Slides.Slide22CTA,
 ];
 
