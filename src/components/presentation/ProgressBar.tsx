@@ -8,7 +8,7 @@ interface ProgressBarProps {
 
 export const ProgressBar = ({ progress, currentSlide, totalSlides }: ProgressBarProps) => {
   return (
-    <div className="fixed top-0 left-0 right-0 z-50">
+    <div className="fixed top-0 left-0 right-0 z-50 print:hidden">
       <div className="h-1 bg-muted/30">
         <motion.div
           className="h-full gradient-werk-horizontal"
