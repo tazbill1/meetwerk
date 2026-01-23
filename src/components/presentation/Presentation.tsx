@@ -14,12 +14,10 @@ const slideComponents = [
   Slides.SlideDoubleDrain,
   Slides.Slide05NotTrustFalls,
   Slides.SlideWorkforceWants,
-  Slides.Slide07WhyInvest,
-  Slides.Slide09EngagedEqualsPerformance,
+  Slides.SlideWhyEngage,
   
   // Solution Overview
-  Slides.Slide10OnePlatform,
-  Slides.Slide11WhatMakesDifferent,
+  Slides.SlideSolution,
   
   // Features Deep-Dive
   Slides.Slide15EmotionalCheckins,
