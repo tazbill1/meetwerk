@@ -1,11 +1,9 @@
 export { Slide00Cover } from './Slide00Cover';
-export { Slide01Hero } from './Slide01Hero';
 export { SlideDataInput } from './SlideDataInput';
-export { SlideProblem } from './SlideProblem';
+export { SlideDoubleDrain } from './SlideDoubleDrain';
 export { Slide05NotTrustFalls } from './Slide05NotTrustFalls';
-export { Slide06WorkforceChanged } from './Slide06WorkforceChanged';
+export { SlideWorkforceWants } from './SlideWorkforceWants';
 export { Slide07WhyInvest } from './Slide07WhyInvest';
-export { Slide08WhatTheyWant } from './Slide08WhatTheyWant';
 export { Slide09EngagedEqualsPerformance } from './Slide09EngagedEqualsPerformance';
 export { Slide10OnePlatform } from './Slide10OnePlatform';
 export { Slide11WhatMakesDifferent } from './Slide11WhatMakesDifferent';

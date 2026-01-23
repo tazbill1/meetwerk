@@ -11,12 +11,10 @@ const slideComponents = [
   Slides.SlideDataInput,
   
   // Problem & Why
-  Slides.Slide01Hero,
-  Slides.SlideProblem,
+  Slides.SlideDoubleDrain,
   Slides.Slide05NotTrustFalls,
-  Slides.Slide06WorkforceChanged,
+  Slides.SlideWorkforceWants,
   Slides.Slide07WhyInvest,
-  Slides.Slide08WhatTheyWant,
   Slides.Slide09EngagedEqualsPerformance,
   
   // Solution Overview
