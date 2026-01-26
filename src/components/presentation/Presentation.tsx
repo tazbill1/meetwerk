@@ -9,6 +9,7 @@ const slideComponents = [
   // Opening
   Slides.Slide00Cover,
   Slides.SlideDataInput,
+  Slides.SlideROICalculator,
   
   // Problem & Why
   Slides.SlideDoubleDrain,

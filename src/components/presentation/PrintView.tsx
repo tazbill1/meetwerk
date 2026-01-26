@@ -4,6 +4,7 @@ import * as Slides from './slides';
 const slideComponents = [
   Slides.Slide00Cover,
   Slides.SlideDataInput,
+  Slides.SlideROICalculator,
   Slides.SlideDoubleDrain,
   Slides.Slide05NotTrustFalls,
   Slides.SlideWorkforceWants,
