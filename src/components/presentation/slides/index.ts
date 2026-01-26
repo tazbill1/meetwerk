@@ -1,6 +1,5 @@
 export { Slide00Cover } from './Slide00Cover';
 export { SlideDataInput } from './SlideDataInput';
-export { SlideROICalculator } from './SlideROICalculator';
 export { SlideDoubleDrain } from './SlideDoubleDrain';
 export { Slide05NotTrustFalls } from './Slide05NotTrustFalls';
 export { SlideWorkforceWants } from './SlideWorkforceWants';
