@@ -49,14 +49,16 @@ export const SlideDoubleDrain = () => {
               <span className="text-xs font-semibold uppercase tracking-wider">Disengagement</span>
             </div>
             
-            <AnimatedStat
-              value={51}
-              suffix="%"
-              label="Actively Disengaged"
-              sublabel="Over half mentally checked out"
-              variant="default"
-              delay={300}
-            />
+            <div className="text-destructive">
+              <AnimatedStat
+                value={51}
+                suffix="%"
+                label="Actively Disengaged"
+                sublabel="Over half mentally checked out"
+                variant="large"
+                delay={300}
+              />
+            </div>
             
             <div className="mt-4 space-y-2 text-sm text-white/60">
               <div className="flex items-center gap-2">
