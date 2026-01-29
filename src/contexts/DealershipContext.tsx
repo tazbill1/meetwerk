@@ -3,6 +3,8 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 interface DealershipData {
   employees: number;
   turnoverRate: number;
+  monthlyHires: number;
+  useMonthlyHires: boolean; // true = monthly hires input, false = turnover rate input
   avgSalary: number;
   useCustomReplacementCost: boolean;
   customReplacementCost: number;
@@ -16,6 +18,7 @@ interface DealershipContextType {
   resetToDefaults: () => void;
   // Calculated values
   employeesLost: number;
+  effectiveTurnoverRate: number;
   replacementCostPerEmployee: number;
   annualTurnoverCost: number;
   potentialSavings: number;
@@ -24,6 +27,8 @@ interface DealershipContextType {
 const DEFAULT_DATA: DealershipData = {
   employees: 50,
   turnoverRate: 40,
+  monthlyHires: 2,
+  useMonthlyHires: true, // Default to monthly hires (more intuitive)
   avgSalary: 45000,
   useCustomReplacementCost: false,
   customReplacementCost: 15000,
@@ -51,7 +56,16 @@ export const DealershipProvider = ({ children }: { children: ReactNode }) => {
   };
 
   // Calculated values
-  const employeesLost = Math.round(data.employees * (data.turnoverRate / 100));
+  // If using monthly hires, calculate employees lost from that; otherwise use turnover rate
+  const employeesLost = data.useMonthlyHires 
+    ? data.monthlyHires * 12 
+    : Math.round(data.employees * (data.turnoverRate / 100));
+  
+  // Calculate effective turnover rate for display purposes
+  const effectiveTurnoverRate = data.useMonthlyHires
+    ? Math.round((data.monthlyHires * 12 / data.employees) * 100)
+    : data.turnoverRate;
+  
   const replacementCostPerEmployee = data.useCustomReplacementCost 
     ? data.customReplacementCost 
     : data.avgSalary * DEFAULT_REPLACEMENT_COST_MULTIPLIER;
@@ -65,6 +79,7 @@ export const DealershipProvider = ({ children }: { children: ReactNode }) => {
       setData,
       resetToDefaults,
       employeesLost,
+      effectiveTurnoverRate,
       replacementCostPerEmployee,
       annualTurnoverCost,
       potentialSavings,
