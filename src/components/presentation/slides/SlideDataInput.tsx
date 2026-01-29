@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { Users, TrendingDown, DollarSign, SkipForward, AlertTriangle, Pencil, Calculator } from 'lucide-react';
+import { Users, TrendingDown, DollarSign, SkipForward, AlertTriangle, Pencil, Calculator, UserPlus, Percent } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
 import { SlideHeader } from '../SlideHeader';
 
 export const SlideDataInput = () => {
-  const { data, setData, employeesLost, replacementCostPerEmployee, annualTurnoverCost } = useDealership();
+  const { data, setData, employeesLost, effectiveTurnoverRate, replacementCostPerEmployee, annualTurnoverCost } = useDealership();
 
   return (
     <div className="relative w-full h-full gradient-werk-dark flex items-center justify-center overflow-hidden">
@@ -66,29 +66,76 @@ export const SlideDataInput = () => {
                 </div>
               </div>
               
-              {/* Turnover Rate */}
+              {/* Turnover Input - Toggle between Monthly Hires and Rate */}
               <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-9 h-9 rounded-full bg-werk-cyan/20 flex items-center justify-center">
-                    <TrendingDown className="w-4 h-4 text-werk-cyan" />
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full bg-werk-cyan/20 flex items-center justify-center">
+                      {data.useMonthlyHires ? (
+                        <UserPlus className="w-4 h-4 text-werk-cyan" />
+                      ) : (
+                        <Percent className="w-4 h-4 text-werk-cyan" />
+                      )}
+                    </div>
+                    <div className="flex-1">
+                      <label className="text-white font-medium text-sm">
+                        {data.useMonthlyHires ? 'Hires per month' : 'Annual turnover rate'}
+                      </label>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <label className="text-white font-medium text-sm">Annual turnover rate</label>
+                  <div className="flex items-center gap-2">
+                    <span className="text-werk-cyan font-bold text-xl">
+                      {data.useMonthlyHires ? data.monthlyHires : `${data.turnoverRate}%`}
+                    </span>
+                    <Switch
+                      checked={!data.useMonthlyHires}
+                      onCheckedChange={(checked) => setData({ useMonthlyHires: !checked })}
+                      className="scale-75"
+                    />
                   </div>
-                  <span className="text-werk-cyan font-bold text-xl">{data.turnoverRate}%</span>
                 </div>
-                <Slider
-                  value={[data.turnoverRate]}
-                  onValueChange={(val) => setData({ turnoverRate: val[0] })}
-                  min={10}
-                  max={80}
-                  step={5}
-                  className="w-full"
-                />
-                <div className="flex justify-between text-white/40 text-xs mt-1">
-                  <span>10%</span>
-                  <span>80%</span>
-                </div>
+                
+                {data.useMonthlyHires ? (
+                  <>
+                    <Slider
+                      value={[data.monthlyHires]}
+                      onValueChange={(val) => setData({ monthlyHires: val[0] })}
+                      min={1}
+                      max={20}
+                      step={1}
+                      className="w-full"
+                    />
+                    <div className="flex justify-between text-white/40 text-xs mt-1">
+                      <span>1/mo</span>
+                      <span>20/mo</span>
+                    </div>
+                    <p className="text-white/40 text-xs mt-2">
+                      = {effectiveTurnoverRate}% annual turnover rate
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <Slider
+                      value={[data.turnoverRate]}
+                      onValueChange={(val) => setData({ turnoverRate: val[0] })}
+                      min={10}
+                      max={80}
+                      step={5}
+                      className="w-full"
+                    />
+                    <div className="flex justify-between text-white/40 text-xs mt-1">
+                      <span>10%</span>
+                      <span>80%</span>
+                    </div>
+                  </>
+                )}
+                
+                <p className="text-white/30 text-xs mt-2 flex items-center gap-1">
+                  <span>Toggle for</span>
+                  <span className="text-werk-cyan/70">
+                    {data.useMonthlyHires ? 'annual rate %' : 'monthly hires'}
+                  </span>
+                </p>
               </div>
               
               {/* Average Salary */}
