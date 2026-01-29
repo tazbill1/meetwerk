@@ -123,13 +123,17 @@ const CalculatorContent = () => {
                         step={1}
                         className="w-full"
                       />
-                      <div className="flex justify-between text-white/40 text-xs mt-1">
-                        <span>1/mo</span>
-                        <span>20/mo</span>
+                      <div className="flex justify-between items-center mt-2">
+                        <div className="text-white/40 text-xs">
+                          <span>1/mo</span>
+                          <span className="mx-2">—</span>
+                          <span>20/mo</span>
+                        </div>
+                        <div className="bg-werk-cyan/20 border border-werk-cyan/40 rounded-lg px-3 py-1">
+                          <span className="text-werk-cyan font-bold text-sm">= {effectiveTurnoverRate}%</span>
+                          <span className="text-white/60 text-xs ml-1">annual</span>
+                        </div>
                       </div>
-                      <p className="text-white/40 text-xs mt-1">
-                        = {effectiveTurnoverRate}% annual turnover
-                      </p>
                     </>
                   ) : (
                     <>
