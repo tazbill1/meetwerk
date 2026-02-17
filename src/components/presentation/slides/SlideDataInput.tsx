@@ -151,7 +151,7 @@ export const SlideDataInput = () => {
                   <div className="flex-1">
                     <label className="text-white font-medium text-sm">Average salary</label>
                   </div>
-                  <span className="text-werk-blue font-bold text-xl">${data.avgSalary.toLocaleString()}</span>
+                  <span className="bg-werk-blue/20 border border-werk-blue/40 rounded-lg px-3 py-1 text-werk-cyan font-bold text-xl">${data.avgSalary.toLocaleString()}</span>
                 </div>
                 <Slider
                   value={[data.avgSalary]}
