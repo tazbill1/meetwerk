@@ -294,11 +294,4 @@
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
-
-  /* One-pager print: single portrait page */
-  .one-pager-page {
-    width: 100% !important;
-    max-width: none !important;
-    padding: 0.4in 0.5in !important;
-  }
 }
