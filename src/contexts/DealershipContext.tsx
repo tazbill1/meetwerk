@@ -25,7 +25,7 @@ interface DealershipContextType {
 }
 
 const DEFAULT_DATA: DealershipData = {
-  employees: 50,
+  employees: 100,
   turnoverRate: 40,
   monthlyHires: 2,
   useMonthlyHires: true, // Default to monthly hires (more intuitive)
