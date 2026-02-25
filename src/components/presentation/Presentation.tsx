@@ -26,8 +26,8 @@ const slideComponents = [
   Slides.Slide18Recognition,
   Slides.Slide19Serving,
   Slides.Slide20Training,
-  Slides.Slide21Rewards,
   Slides.Slide14Onboarding,
+  Slides.Slide21Rewards,
   Slides.Slide12ProvenResults,
   
   // Close Sequence
