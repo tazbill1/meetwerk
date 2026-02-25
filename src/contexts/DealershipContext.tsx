@@ -25,11 +25,11 @@ interface DealershipContextType {
 }
 
 const DEFAULT_DATA: DealershipData = {
-  employees: 100,
+  employees: 200,
   turnoverRate: 40,
-  monthlyHires: 2,
-  useMonthlyHires: true, // Default to monthly hires (more intuitive)
-  avgSalary: 45000,
+  monthlyHires: 5,
+  useMonthlyHires: true,
+  avgSalary: 60000,
   useCustomReplacementCost: false,
   customReplacementCost: 15000,
   improvementRate: 30,
