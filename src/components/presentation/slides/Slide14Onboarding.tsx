@@ -82,7 +82,7 @@ export const Slide14Onboarding = () => {
               <img
                 src={guidemeScreenshot}
                 alt="GuideMe onboarding checklist"
-                className="relative rounded-2xl shadow-2xl border border-white/10 max-h-[400px] object-contain"
+                className="relative z-10 rounded-2xl shadow-2xl border border-white/10 max-h-[400px] object-contain"
               />
             </div>
           </motion.div>
