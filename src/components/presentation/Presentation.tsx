@@ -31,6 +31,7 @@ const slideComponents = [
   // Close Sequence
   Slides.Slide12ProvenResults,
   Slides.Slide13Implementation,
+  Slides.Slide14Onboarding,
   Slides.Slide22CTA,
 ];
 

@@ -7,6 +7,7 @@ export { SlideWhyEngage } from './SlideWhyEngage';
 export { SlideSolution } from './SlideSolution';
 export { Slide12ProvenResults } from './Slide12ProvenResults';
 export { Slide13Implementation } from './Slide13Implementation';
+export { Slide14Onboarding } from './Slide14Onboarding';
 export { Slide15EmotionalCheckins } from './Slide15EmotionalCheckins';
 export { Slide16Dashboard } from './Slide16Dashboard';
 export { Slide17Gamification } from './Slide17Gamification';
