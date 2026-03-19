@@ -52,10 +52,7 @@ export const SlideThreeQuestions = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3"
         >
-          Before we show you the platform — let's start with{' '}
-          <span className="italic" style={{ color: 'hsl(186, 100%, 40%)' }}>
-            what actually matters.
-          </span>
+          3 Questions
         </motion.h2>
 
         {/* Subline */}
