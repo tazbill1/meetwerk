@@ -47,15 +47,6 @@ export const SlideThreeQuestions = () => {
         </motion.h2>
 
         {/* Subline */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-white/50 text-base md:text-lg mb-10 max-w-3xl"
-        >
-          Most dealerships never stop to ask these questions. The ones that do are the ones retaining their best people.
-        </motion.p>
-
         {/* Question Cards */}
         <div className="space-y-4">
           {questions.map((q, i) => (
