@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { UserCheck, AlertTriangle } from 'lucide-react';
 import guidemeScreenshot from '@/assets/guideme-onboarding-screenshot.png';
 
