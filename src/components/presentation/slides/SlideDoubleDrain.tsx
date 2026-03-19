@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
+
 import { AnimatedStat } from '../AnimatedStat';
 import { AlertTriangle, UserX, TrendingDown } from 'lucide-react';
 import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
@@ -14,8 +14,6 @@ export const SlideDoubleDrain = () => {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-destructive blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-orange-500 blur-3xl" />
       </div>
-      
-      <SlideHeader light />
       
       <div className="relative z-10 w-full max-w-6xl px-8">
         <motion.div
