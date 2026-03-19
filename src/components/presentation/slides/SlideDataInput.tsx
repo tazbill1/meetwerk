@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SlideHeader } from '../SlideHeader';
 import { Users, TrendingDown, DollarSign, SkipForward, AlertTriangle, Pencil, Calculator, UserPlus, Percent } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
