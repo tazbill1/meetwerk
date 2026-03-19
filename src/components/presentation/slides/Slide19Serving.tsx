@@ -1,13 +1,10 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { Heart } from 'lucide-react';
 import serveyouScreenshot from '@/assets/serveyou-screenshot.png';
 
 export const Slide19Serving = () => {
   return (
     <div className="relative w-full h-full bg-background flex items-center justify-center overflow-hidden">
-      <SlideHeader />
-      
       <div className="relative z-10 w-full max-w-6xl px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left side - Screenshot */}

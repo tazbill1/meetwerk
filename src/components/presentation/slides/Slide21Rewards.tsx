@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { Gift } from 'lucide-react';
 import gomeRewardsScreenshot from '@/assets/gome-rewards-screenshot.png';
 
@@ -10,8 +9,6 @@ export const Slide21Rewards = () => {
       <div className="absolute inset-0 opacity-10">
         <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-werk-cyan blur-3xl" />
       </div>
-      
-      <SlideHeader light />
       
       <div className="relative z-10 w-full max-w-6xl px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">

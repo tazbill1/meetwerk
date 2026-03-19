@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { Trophy, Target, TrendingUp, Calendar, Handshake, Crown } from 'lucide-react';
 import contestScreenshot from '@/assets/contest-leaderboard-screenshot.jpg';
 
@@ -17,8 +16,6 @@ export const Slide17Gamification = () => {
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-werk-lime blur-3xl" />
       </div>
-      
-      <SlideHeader light />
       
       <div className="relative z-10 w-full max-w-6xl px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">

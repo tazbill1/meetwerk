@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { GraduationCap, Calendar, BookOpen, Users, Lightbulb } from 'lucide-react';
 import growmeScreenshot from '@/assets/growme-training-screenshot.png';
 
@@ -13,8 +12,6 @@ export const Slide20Training = () => {
 
   return (
     <div className="relative w-full h-full bg-background flex items-center justify-center overflow-hidden">
-      <SlideHeader />
-      
       <div className="relative z-10 w-full max-w-6xl px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left side - Screenshot */}

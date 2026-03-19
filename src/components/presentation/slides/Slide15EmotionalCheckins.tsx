@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { Heart } from 'lucide-react';
 import checkmeScreenshot from '@/assets/checkme-app-screenshot.jpg';
 
@@ -10,8 +9,6 @@ export const Slide15EmotionalCheckins = () => {
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnYtMmgtNHY2aDR2MnptMCAwaC0ydjRoMnYtNHptLTQtNGgtMnY0aDJ2LTR6bS0yLTRoLTJ2NGgydi00eiIvPjwvZz48L2c+PC9zdmc+')]" />
       </div>
-      
-      <SlideHeader light />
       
       <div className="relative z-10 w-full max-w-6xl px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
