@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { GraduationCap, Calendar, BookOpen, Users, Lightbulb } from 'lucide-react';
 import growmeScreenshot from '@/assets/growme-training-screenshot.png';
 
