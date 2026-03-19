@@ -1,38 +1,42 @@
 import { motion } from 'framer-motion';
 
 export const Slide13Implementation = () => {
-  const weeks = [
+  const steps = [
     {
-      week: 1,
+      num: 1,
       color: '#1D9E75',
-      phase: 'Setup',
-      label: 'Configure',
-      tasks: ['Platform setup', 'Brand integration', 'Admin training'],
+      circleBg: 'rgba(29,158,117,0.15)',
+      title: 'Strategy',
+      sub: 'The Who, What & How',
+      bullets: ['Define your goals', 'Map your team structure', 'Build your engagement plan'],
       cardBg: '',
     },
     {
-      week: 2,
+      num: 2,
       color: '#378ADD',
-      phase: 'Rollout',
-      label: 'Onboard Team',
-      tasks: ['Employee app launch', 'Manager dashboard', 'First check-ins live'],
+      circleBg: 'rgba(55,138,221,0.15)',
+      title: 'Set-Up',
+      sub: 'Built for your dealership',
+      bullets: ['Platform customization', 'Brand integration', 'Admin & manager training'],
       cardBg: '',
     },
     {
-      week: 3,
+      num: 3,
       color: '#7F77DD',
-      phase: 'Activate',
-      label: 'Go Live',
-      tasks: ['Gamification on', 'Recognition program', 'First challenges'],
+      circleBg: 'rgba(127,119,221,0.15)',
+      title: 'Go Live',
+      sub: 'In-person launch day',
+      bullets: ['On-site team launch', 'Employee app activation', 'First check-ins & challenges'],
       cardBg: '',
     },
     {
-      week: 4,
+      num: 4,
       color: '#B5E550',
-      phase: 'Complete',
-      label: 'Fully Live',
-      tasks: ['Full team engaged', 'Data flowing', 'Culture coach review'],
-      cardBg: 'rgba(181,229,80,0.05)',
+      circleBg: 'rgba(181,229,80,0.12)',
+      title: 'Collaboration',
+      sub: 'Ongoing partnership',
+      bullets: ['Monthly coaching sessions', 'Strategy & data reviews', 'New ideas, executed together'],
+      cardBg: 'rgba(181,229,80,0.06)',
     },
   ];
 
@@ -54,82 +58,66 @@ export const Slide13Implementation = () => {
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-5 max-w-4xl"
+          className="text-center mb-6 max-w-4xl"
         >
           <div className="uppercase text-xs font-semibold tracking-[0.2em] mb-2" style={{ color: '#4FC3F7' }}>
-            White-glove implementation
+            Your path to a fully engaged team
           </div>
           <h2 className="text-[26px] font-bold text-white leading-tight">
-            We don't just hand you software.{' '}
-            <span style={{ color: '#4FC3F7', fontStyle: 'italic' }}>We do the heavy lifting with you.</span>
+            Four steps. Four weeks.{' '}
+            <span style={{ color: '#4FC3F7' }}>Fully live and driving results.</span>
           </h2>
           <p className="mt-2 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            Your dedicated Culture Coach brings the ideas, runs the playbook, and helps execute inside the platform — so your managers can focus on selling cars.
+            We guide you through every step — from strategy to launch — and stay by your side long after go-live.
           </p>
         </motion.div>
 
-        {/* Culture Coach pill */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.15 }}
-          className="flex items-center gap-3 px-5 py-2.5 rounded-[40px] mb-6"
-          style={{ background: 'rgba(29,158,117,0.1)', border: '1px solid rgba(29,158,117,0.3)' }}
-        >
-          <div
-            className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold"
-            style={{ background: 'linear-gradient(135deg, #1D9E75, #4FC3F7)' }}
-          >
-            CC
-          </div>
-          <div>
-            <div className="text-[10px] uppercase tracking-[0.15em] font-semibold" style={{ color: '#4FC3F7' }}>
-              Your dedicated
-            </div>
-            <div className="text-white font-bold text-sm -mt-0.5">Culture Coach</div>
-          </div>
-        </motion.div>
-
-        {/* 4-week timeline */}
+        {/* 4-step grid */}
         <div className="relative w-full max-w-4xl mb-5">
-          {/* Connector line */}
-          <div className="hidden md:block absolute top-[14px] left-[12.5%] right-[12.5%] h-px" style={{ background: 'rgba(255,255,255,0.1)' }} />
+          {/* Connector lines */}
+          <div className="hidden md:block absolute top-[36px] left-[12.5%] right-[12.5%] h-px" style={{ background: 'rgba(255,255,255,0.1)' }} />
+          <div
+            className="hidden md:block absolute top-[35px] left-[12.5%] right-[12.5%] h-[3px] rounded-full"
+            style={{ background: 'linear-gradient(90deg, #1D9E75, #378ADD, #7F77DD, #B5E550)', opacity: 0.4 }}
+          />
 
-          <div className="grid grid-cols-4 gap-3">
-            {weeks.map((w, i) => (
+          <div className="grid grid-cols-4">
+            {steps.map((s, i) => (
               <motion.div
-                key={w.week}
+                key={s.num}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 + i * 0.1 }}
-                className="flex flex-col items-center"
+                transition={{ delay: 0.15 + i * 0.1 }}
+                className="flex flex-col items-center px-1.5"
               >
-                {/* Dot */}
+                {/* Circle */}
                 <div
-                  className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold text-white mb-1.5 relative z-10"
-                  style={{ background: w.color }}
+                  className="w-[72px] h-[72px] rounded-full flex items-center justify-center relative z-10 mb-1"
+                  style={{ background: s.circleBg, border: `2px solid ${s.color}` }}
                 >
-                  {w.week}
+                  <div className="text-lg font-bold text-white leading-none">{s.num}</div>
                 </div>
-                {/* Phase label */}
-                <div className="text-[10px] uppercase tracking-wider font-semibold mb-1.5" style={{ color: w.color }}>
-                  {w.phase}
+                <div className="text-[10px] uppercase tracking-wider font-semibold mb-2" style={{ color: s.color }}>
+                  Step
                 </div>
+
                 {/* Card */}
                 <div
-                  className="w-full rounded-lg p-3"
+                  className="w-full rounded-xl"
                   style={{
-                    background: w.cardBg || 'rgba(255,255,255,0.03)',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                    borderTop: `2px solid ${w.color}`,
+                    background: s.cardBg || 'rgba(255,255,255,0.03)',
+                    border: `1px solid ${s.color}33`,
+                    borderTop: `2px solid ${s.color}`,
+                    padding: '16px 14px',
                   }}
                 >
-                  <div className="text-xs font-semibold text-white mb-1.5">{w.label}</div>
+                  <div className="text-sm font-bold text-white mb-0.5">{s.title}</div>
+                  <div className="text-[11px] mb-2" style={{ color: s.color }}>{s.sub}</div>
                   <ul className="space-y-1">
-                    {w.tasks.map((t) => (
-                      <li key={t} className="text-[11px] flex items-start gap-1.5" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                        <span style={{ color: w.color }} className="mt-0.5 text-[8px]">●</span>
-                        {t}
+                    {s.bullets.map((b) => (
+                      <li key={b} className="text-[11px] flex items-start gap-1.5" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                        <span style={{ color: s.color }} className="mt-0.5 text-[8px]">●</span>
+                        {b}
                       </li>
                     ))}
                   </ul>
@@ -139,49 +127,33 @@ export const Slide13Implementation = () => {
           </div>
         </div>
 
-        {/* Divider with pill */}
-        <div className="relative w-full max-w-4xl flex items-center mb-4">
-          <div className="flex-1 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(127,119,221,0.3), transparent)' }} />
+        {/* Culture Coach pill */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5 }}
+          className="flex items-center gap-4 rounded-[40px] max-w-[520px] w-full"
+          style={{ background: 'rgba(29,158,117,0.08)', border: '1px solid rgba(29,158,117,0.2)', padding: '10px 24px' }}
+        >
           <div
-            className="mx-3 px-4 py-1 rounded-[20px] text-[10px] font-semibold tracking-wider whitespace-nowrap"
-            style={{ color: '#AFA9EC', background: 'rgba(127,119,221,0.15)', border: '1px solid rgba(127,119,221,0.3)' }}
+            className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
+            style={{ background: 'linear-gradient(135deg, #1D9E75, #4FC3F7)' }}
           >
-            Then — ongoing partnership
+            CC
           </div>
-          <div className="flex-1 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(127,119,221,0.3), transparent)' }} />
-        </div>
-
-        {/* Two bottom cards */}
-        <div className="grid grid-cols-2 gap-3 w-full max-w-4xl">
-          {[
-            {
-              title: 'Coaching & Strategy',
-              desc: 'Regular sessions with your Culture Coach — reviewing data, identifying opportunities, and planning the next engagement push.',
-            },
-            {
-              title: 'Execution Support',
-              desc: "We don't just tell you what to do. We bring the ideas and help build them inside the platform — challenges, campaigns, recognition programs.",
-            },
-          ].map((card) => (
-            <motion.div
-              key={card.title}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="rounded-lg p-4"
-              style={{ background: 'rgba(127,119,221,0.08)', border: '1px solid rgba(127,119,221,0.2)' }}
-            >
-              <div className="text-sm font-bold text-white mb-1">{card.title}</div>
-              <p className="text-[11px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                {card.desc}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+          <div>
+            <div className="text-[10px] uppercase tracking-[0.15em] font-bold" style={{ color: '#4FC3F7' }}>
+              Your dedicated Culture Coach
+            </div>
+            <div className="text-[11px] mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              With you from day one — bringing ideas, running the playbook, and doing the heavy lifting.
+            </div>
+          </div>
+        </motion.div>
       </div>
 
       {/* Footer */}
-      <div className="px-8 py-3 flex items-center justify-between" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+      <div className="px-8 py-3 flex items-center justify-between" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
         <span className="text-[11px]" style={{ color: 'rgba(255,255,255,0.35)' }}>
           Built for dealerships. Proven in the showroom.
         </span>
