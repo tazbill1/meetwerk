@@ -19,7 +19,7 @@ export const Slide10OnePlatform = () => {
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-werk-cyan blur-3xl" />
       </div>
       
-      
+      <SlideHeader light />
       <div className="relative z-10 w-full max-w-6xl px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

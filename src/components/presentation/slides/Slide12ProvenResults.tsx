@@ -21,7 +21,7 @@ export const Slide12ProvenResults = () => {
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-werk-blue blur-3xl" />
       </div>
       
-      
+      <SlideHeader light />
       <div className="relative z-10 w-full max-w-6xl px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

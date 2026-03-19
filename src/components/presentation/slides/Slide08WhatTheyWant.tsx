@@ -17,7 +17,7 @@ export const Slide08WhatTheyWant = () => {
         <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full bg-werk-lime blur-3xl" />
       </div>
       
-      
+      <SlideHeader light />
       <div className="relative z-10 w-full max-w-6xl px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div

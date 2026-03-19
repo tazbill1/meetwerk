@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SlideHeader } from '../SlideHeader';
 import { X, BarChart3, Target } from 'lucide-react';
 
 export const Slide05NotTrustFalls = () => {
@@ -16,7 +17,7 @@ export const Slide05NotTrustFalls = () => {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-werk-cyan blur-3xl" />
       </div>
       
-      
+      <SlideHeader light />
       <div className="relative z-10 w-full max-w-6xl px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

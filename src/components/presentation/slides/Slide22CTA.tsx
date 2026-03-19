@@ -28,7 +28,7 @@ export const Slide22CTA = () => {
         <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-werk-cyan blur-3xl" />
       </div>
       
-      
+      <SlideHeader light />
       <div className="relative z-10 w-full max-w-6xl px-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
