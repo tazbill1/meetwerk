@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SlideHeader } from '../SlideHeader';
 import { AnimatedStat } from '../AnimatedStat';
 import { TrendingUp, DollarSign, ThumbsUp, BarChart } from 'lucide-react';
 
