@@ -13,9 +13,9 @@ const slideComponents = [
   
   // Problem & Why
   Slides.SlideDoubleDrain,
-  Slides.Slide05NotTrustFalls,
   Slides.SlideWorkforceWants,
   Slides.SlideWhyEngage,
+  Slides.Slide05NotTrustFalls,
   
   // Solution Overview
   Slides.SlideSolution,
