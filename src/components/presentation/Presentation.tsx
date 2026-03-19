@@ -8,6 +8,7 @@ import * as Slides from './slides';
 const slideComponents = [
   // Opening
   Slides.Slide00Cover,
+  Slides.SlideThreeQuestions,
   Slides.SlideDataInput,
   
   // Problem & Why
