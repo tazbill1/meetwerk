@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SlideHeader } from '../SlideHeader';
 import { Users, Smartphone, Heart, Trophy, Star, Briefcase, Smile } from 'lucide-react';
 
 export const SlideWorkforceWants = () => {
