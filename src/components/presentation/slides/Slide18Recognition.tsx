@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { MessageSquare } from 'lucide-react';
 import noticemeFeed from '@/assets/noticeme-feed-screenshot.jpg';
 import noticemeDetail from '@/assets/noticeme-detail-screenshot.jpg';
