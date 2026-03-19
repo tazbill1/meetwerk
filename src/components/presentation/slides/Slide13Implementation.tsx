@@ -156,7 +156,7 @@ export const Slide13Implementation = () => {
           {[
             {
               title: 'Coaching & Strategy',
-              desc: 'Monthly sessions with your Culture Coach — reviewing data, identifying opportunities, and planning the next engagement push.',
+              desc: 'Regular sessions with your Culture Coach — reviewing data, identifying opportunities, and planning the next engagement push.',
             },
             {
               title: 'Execution Support',
