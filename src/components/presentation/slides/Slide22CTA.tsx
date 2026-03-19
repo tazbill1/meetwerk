@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SlideHeader } from '../SlideHeader';
 import werkLogo from '@/assets/werkandme-logo.png';
 import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
 import { TrendingUp, Star, Heart, Award, Sparkles, Printer, AlertTriangle, CheckCircle2, Trophy, BarChart3, MessageSquare, Gift, Clock } from 'lucide-react';
