@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SlideHeader } from '../SlideHeader';
 import { Sparkles, Heart, Trophy, Clock } from 'lucide-react';
 
 export const Slide11WhatMakesDifferent = () => {
