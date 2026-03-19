@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { Gift } from 'lucide-react';
 import gomeRewardsScreenshot from '@/assets/gome-rewards-screenshot.png';
 
