@@ -7,8 +7,6 @@ export const Slide18Recognition = () => {
 
   return (
     <div className="relative w-full h-full bg-background flex items-center justify-center overflow-hidden">
-      <SlideHeader />
-      
       <div className="relative z-10 w-full max-w-6xl px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div

@@ -11,9 +11,7 @@ export const Slide16Dashboard = () => {
 
   return (
     <div className="relative w-full h-full bg-background flex items-center justify-center overflow-hidden">
-      <SlideHeader />
-      
-      <div className="relative z-10 w-full max-w-6xl px-8 pt-16">
+      <div className="relative z-10 w-full max-w-6xl px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
