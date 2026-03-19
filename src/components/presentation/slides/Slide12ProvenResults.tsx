@@ -36,9 +36,6 @@ export const Slide12ProvenResults = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             Real Numbers from Real Dealerships
           </h2>
-          <p className="mt-4 text-xl text-white/70 max-w-2xl mx-auto">
-            Within 90 days of implementing WerkandMe, our partner dealerships saw dramatic improvements.
-          </p>
         </motion.div>
         
         <div className="grid md:grid-cols-2 gap-6">
