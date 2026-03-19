@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { Heart } from 'lucide-react';
 import checkmeScreenshot from '@/assets/checkme-app-screenshot.jpg';
 
