@@ -34,16 +34,7 @@ export const SlideThreeQuestions = () => {
       <SlideHeader light />
 
       <div className="flex-1 flex flex-col justify-center px-8 md:px-16 max-w-5xl mx-auto w-full">
-        {/* Eyebrow */}
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-sm font-semibold uppercase tracking-[0.2em] mb-4"
-          style={{ color: 'hsl(186, 100%, 40%)' }}
-        >
-          Three questions that change everything
-        </motion.span>
+        {/* Headline */}
 
         {/* Headline */}
         <motion.h2
