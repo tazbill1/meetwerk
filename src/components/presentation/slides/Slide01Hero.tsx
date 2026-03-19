@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SlideHeader } from '../SlideHeader';
 
 export const Slide01Hero = () => {
   return (
@@ -9,7 +10,7 @@ export const Slide01Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-werk-lime blur-3xl" />
       </div>
       
-      
+      <SlideHeader light />
       <div className="relative z-10 text-center px-8 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
