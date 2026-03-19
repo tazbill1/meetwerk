@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SlideHeader } from '../SlideHeader';
 import { AnimatedStat } from '../AnimatedStat';
 import { AlertTriangle, UserX, TrendingDown } from 'lucide-react';
 import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
