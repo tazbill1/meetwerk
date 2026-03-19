@@ -1,4 +1,5 @@
 export { Slide00Cover } from './Slide00Cover';
+export { SlideThreeQuestions } from './SlideThreeQuestions';
 export { SlideDataInput } from './SlideDataInput';
 export { SlideDoubleDrain } from './SlideDoubleDrain';
 export { Slide05NotTrustFalls } from './Slide05NotTrustFalls';
