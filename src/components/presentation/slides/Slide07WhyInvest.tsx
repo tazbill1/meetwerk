@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SlideHeader } from '../SlideHeader';
 import { Shield, TrendingUp, Users, Award } from 'lucide-react';
 
 export const Slide07WhyInvest = () => {
