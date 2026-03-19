@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { Trophy, Target, TrendingUp, Calendar, Handshake, Crown } from 'lucide-react';
 import contestScreenshot from '@/assets/contest-leaderboard-screenshot.jpg';
 
