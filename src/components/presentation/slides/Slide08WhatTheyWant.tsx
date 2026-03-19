@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SlideHeader } from '../SlideHeader';
 import { AnimatedStat } from '../AnimatedStat';
 import { Heart, Star, Briefcase, Smile } from 'lucide-react';
 
