@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { BarChart3, TrendingUp, Users, AlertTriangle } from 'lucide-react';
 
 export const Slide16Dashboard = () => {
