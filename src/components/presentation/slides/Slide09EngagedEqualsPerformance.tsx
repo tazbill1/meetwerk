@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { AnimatedStat } from '../AnimatedStat';
 import { TrendingUp, DollarSign, ThumbsUp, BarChart } from 'lucide-react';
 
@@ -13,7 +12,6 @@ export const Slide09EngagedEqualsPerformance = () => {
 
   return (
     <div className="relative w-full h-full bg-background flex items-center justify-center overflow-hidden">
-      <SlideHeader />
       
       <div className="relative z-10 w-full max-w-6xl px-8">
         <motion.div

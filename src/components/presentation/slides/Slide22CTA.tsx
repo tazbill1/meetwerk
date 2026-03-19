@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import werkLogo from '@/assets/werkandme-logo.png';
 import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
 import { TrendingUp, Star, Heart, Award, Sparkles, Printer, AlertTriangle, CheckCircle2, Trophy, BarChart3, MessageSquare, Gift, Clock } from 'lucide-react';
@@ -28,7 +27,6 @@ export const Slide22CTA = () => {
         <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-werk-cyan blur-3xl" />
       </div>
       
-      <SlideHeader light />
       
       <div className="relative z-10 w-full max-w-6xl px-8">
         {/* Header */}
