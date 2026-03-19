@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SlideHeader } from '../SlideHeader';
 import werkLogo from '@/assets/werkandme-logo.png';
 import { Heart, Trophy, BarChart3, MessageSquare, Gift, Users } from 'lucide-react';
 
