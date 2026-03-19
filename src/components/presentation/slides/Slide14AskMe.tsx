@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { MessageCircleQuestion, Zap, ShieldCheck } from 'lucide-react';
 import askmeScreenshot from '@/assets/askme-survey-screenshot.png';
 
