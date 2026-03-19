@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { Users, Smartphone, Heart, Trophy, Star, Briefcase, Smile } from 'lucide-react';
 
 export const SlideWorkforceWants = () => {
@@ -24,7 +23,6 @@ export const SlideWorkforceWants = () => {
         <div className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full bg-werk-lime blur-3xl" />
       </div>
       
-      <SlideHeader light />
       
       <div className="relative z-10 w-full max-w-6xl px-8">
         <motion.div

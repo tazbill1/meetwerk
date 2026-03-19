@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 
 const questions = [
   {
@@ -31,7 +30,6 @@ const questions = [
 export const SlideThreeQuestions = () => {
   return (
     <div className="relative w-full h-full gradient-werk-dark flex flex-col overflow-hidden">
-      <SlideHeader light />
 
       <div className="flex-1 flex flex-col justify-center px-8 md:px-16 pt-20 max-w-5xl mx-auto w-full">
         {/* Headline */}

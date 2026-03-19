@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { SlideHeader } from '../SlideHeader';
 import { Shield, TrendingUp, Users, Award } from 'lucide-react';
 
 export const Slide07WhyInvest = () => {
@@ -32,7 +31,6 @@ export const Slide07WhyInvest = () => {
 
   return (
     <div className="relative w-full h-full bg-background flex items-center justify-center overflow-hidden">
-      <SlideHeader />
       
       <div className="relative z-10 w-full max-w-6xl px-8">
         <motion.div
