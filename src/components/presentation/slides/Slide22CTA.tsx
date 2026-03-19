@@ -31,29 +31,28 @@ export const Slide22CTA = () => {
       <SlideHeader light />
       <div className="relative z-10 w-full max-w-6xl px-8">
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-center mb-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-4"
+            className="text-center"
           >
-            <img src={werkLogo} alt="WerkandMe" className="h-12 brightness-0 invert" />
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Recap & Next Steps</h2>
-              <p className="text-white/50 text-sm">Your personalized engagement ROI</p>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Recap & Next Steps</h2>
+            <p className="text-white/50 text-sm mt-1">Your personalized engagement ROI</p>
           </motion.div>
-          <motion.button
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5 }}
-            onClick={handlePrintRecap}
-            className="flex items-center gap-2 bg-werk-lime/20 hover:bg-werk-lime/30 border border-werk-lime/40 text-werk-lime px-4 py-2 rounded-xl text-sm font-semibold transition-colors"
-          >
-            <Printer className="w-4 h-4" />
-            Print Recap
-          </motion.button>
         </div>
+
+        {/* Print button - top right */}
+        <motion.button
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5 }}
+          onClick={handlePrintRecap}
+          className="absolute top-6 right-8 z-20 flex items-center gap-2 bg-werk-lime/20 hover:bg-werk-lime/30 border border-werk-lime/40 text-werk-lime px-4 py-2 rounded-xl text-sm font-semibold transition-colors"
+        >
+          <Printer className="w-4 h-4" />
+          Print Recap
+        </motion.button>
 
         {/* 3-Column Grid */}
         <div className="grid md:grid-cols-3 gap-5">
