@@ -15,8 +15,6 @@ export const SlideDoubleDrain = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-orange-500 blur-3xl" />
       </div>
       
-      <SlideHeader light />
-      
       <div className="relative z-10 w-full max-w-6xl px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
