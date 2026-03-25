@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
 import { AnimatedStat } from '../AnimatedStat';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight, ArrowUp, CheckCircle } from 'lucide-react';
 import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
 
 export const Slide12ProvenResults = () => {
@@ -11,7 +11,7 @@ export const Slide12ProvenResults = () => {
     { label: 'Employee Engagement', before: 32, after: 68, suffix: '%' },
     { label: 'Monthly Turnover', before: 8, after: 3, suffix: '%', inverse: true },
     { label: 'Customer Satisfaction', before: 78, after: 92, suffix: '%' },
-    { label: 'Sales Per Employee', before: 45, after: 67, suffix: 'units', prefix: '' },
+    { label: 'Units Per Employee', before: 45, after: 67, suffix: 'units', prefix: '', change: '↑ 26%' },
   ];
 
   return (
@@ -46,7 +46,15 @@ export const Slide12ProvenResults = () => {
               transition={{ delay: 0.2 + index * 0.1 }}
               className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
             >
-              <div className="text-white/60 text-sm font-medium mb-4">{result.label}</div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="text-white/60 text-sm font-medium">{result.label}</div>
+                {result.change && (
+                  <div className="flex items-center gap-1 text-werk-lime text-sm font-bold">
+                    <ArrowUp className="w-4 h-4" />
+                    {result.change.replace('↑ ', '')}
+                  </div>
+                )}
+              </div>
               
               <div className="flex items-center justify-between">
                 <div className="text-center">
