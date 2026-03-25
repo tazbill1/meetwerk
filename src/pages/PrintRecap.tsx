@@ -24,9 +24,7 @@ const PrintRecap = () => {
             Click here to print manually
           </button>
         </div>
-        <div className="print-slide">
-          <RecapContent />
-        </div>
+        <RecapContent />
       </div>
     </DealershipProvider>
   );
