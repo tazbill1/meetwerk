@@ -46,7 +46,15 @@ export const Slide12ProvenResults = () => {
               transition={{ delay: 0.2 + index * 0.1 }}
               className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
             >
-              <div className="text-white/60 text-sm font-medium mb-4">{result.label}</div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="text-white/60 text-sm font-medium">{result.label}</div>
+                {result.change && (
+                  <div className="flex items-center gap-1 text-werk-lime text-sm font-bold">
+                    <ArrowUp className="w-4 h-4" />
+                    {result.change.replace('↑ ', '')}
+                  </div>
+                )}
+              </div>
               
               <div className="flex items-center justify-between">
                 <div className="text-center">
