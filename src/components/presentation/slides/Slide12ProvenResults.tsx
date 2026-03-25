@@ -11,7 +11,7 @@ export const Slide12ProvenResults = () => {
     { label: 'Employee Engagement', before: 32, after: 68, suffix: '%' },
     { label: 'Monthly Turnover', before: 8, after: 3, suffix: '%', inverse: true },
     { label: 'Customer Satisfaction', before: 78, after: 92, suffix: '%' },
-    { label: 'Sales Per Employee', before: 45, after: 67, suffix: 'units', prefix: '' },
+    { label: 'Units Per Employee', before: 45, after: 67, suffix: 'units', prefix: '', change: '↑ 26%' },
   ];
 
   return (
