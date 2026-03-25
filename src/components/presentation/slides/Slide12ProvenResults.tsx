@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
 import { AnimatedStat } from '../AnimatedStat';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight, ArrowUp, CheckCircle } from 'lucide-react';
 import { useDealership, formatCurrency } from '@/contexts/DealershipContext';
 
 export const Slide12ProvenResults = () => {
