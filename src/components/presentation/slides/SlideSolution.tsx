@@ -66,10 +66,41 @@ export const SlideSolution = () => {
         </div>
         
         <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.75 }}
+          className="mt-6 max-w-3xl mx-auto"
+        >
+          <div
+            className="flex items-center gap-4 rounded-2xl px-5 py-4"
+            style={{
+              background: 'rgba(29,158,117,0.08)',
+              border: '1px solid rgba(29,158,117,0.25)',
+            }}
+          >
+            <div
+              className="w-12 h-12 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
+              style={{ background: 'linear-gradient(135deg, #1D9E75, #4FC3F7)' }}
+            >
+              CC
+            </div>
+            <div className="text-left">
+              <div className="text-[10px] uppercase tracking-[0.18em] font-bold text-werk-cyan">
+                Plus your dedicated Culture Coach
+              </div>
+              <div className="text-sm text-white/70 mt-1">
+                A real person supporting your dealership — bringing ideas, running the playbook,
+                and making sure engagement actually sticks.
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="mt-8 text-center"
+          transition={{ delay: 0.9 }}
+          className="mt-5 text-center"
         >
           <div className="inline-flex items-center gap-2 text-white/50 text-sm">
             <span className="w-2 h-2 rounded-full bg-werk-lime animate-pulse" />
