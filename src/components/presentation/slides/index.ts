@@ -13,6 +13,7 @@ export { Slide14AskMe } from './Slide14AskMe';
 export { Slide15EmotionalCheckins } from './Slide15EmotionalCheckins';
 export { Slide16Dashboard } from './Slide16Dashboard';
 export { Slide17Gamification } from './Slide17Gamification';
+export { SlideCultureCoach } from './SlideCultureCoach';
 export { Slide18Recognition } from './Slide18Recognition';
 export { Slide19Serving } from './Slide19Serving';
 export { Slide20Training } from './Slide20Training';
