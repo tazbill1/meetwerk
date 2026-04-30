@@ -24,6 +24,7 @@ const slideComponents = [
   Slides.Slide15EmotionalCheckins,
   Slides.Slide16Dashboard,
   Slides.Slide17Gamification,
+  Slides.SlideCultureCoach,
   Slides.Slide18Recognition,
   Slides.Slide19Serving,
   Slides.Slide20Training,
