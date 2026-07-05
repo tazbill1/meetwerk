@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "sdk_version": "0.20.0",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "werkandme-mcp",
+      "version": "0.1.0",
+      "title": "WerkandMe"
+    },
+    "tools": [
+      {
+        "name": "calculate_turnover_cost",
+        "title": "Calculate dealership turnover cost",
+        "description": "Estimate the annual cost of employee turnover at a dealership using the same math as the WerkandMe ROI calculator. Provide team size, average salary, and either annual turnover rate (%) or monthly hires; optionally override replacement cost per employee.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "employees": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 5000,
+              "description": "Total team members at the dealership."
+            },
+            "avgSalary": {
+              "type": "number",
+              "minimum": 10000,
+              "maximum": 500000,
+              "description": "Average annual salary in USD."
+            },
+            "turnoverRate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 200,
+              "description": "Annual turnover rate as a percent (e.g. 45 for 45%). Provide this OR monthlyHires."
+            },
+            "monthlyHires": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Number of hires per month. Provide this OR turnoverRate."
+            },
+            "customReplacementCost": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 500000,
+              "description": "Optional: your actual cost to hire + train + ramp one employee (USD). Defaults to 25% of avgSalary."
+            },
+            "improvementRate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Optional: expected % reduction in turnover from WerkandMe (default 30)."
+            }
+          },
+          "required": [
+            "employees",
+            "avgSalary"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_pitch_summary",
+        "title": "Get WerkandMe pitch summary",
+        "description": "Return a concise summary of the WerkandMe pitch: problem, platform features, Culture Coach, and links to the full deck and ROI calculator. Use this to brief a user on what WerkandMe does.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
